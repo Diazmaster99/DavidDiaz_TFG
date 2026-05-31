@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: DavidDiaz_TFG — Agente de aprendizaje por refuerzo para Pokémon VGC</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">DavidDiaz_TFG — Agente de aprendizaje por refuerzo para Pokémon VGC </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md___build__release_2doxygen__mainpage"></a></p>
+<p>Bot de inteligencia artificial que juega combates Pokémon, con especial atención al formato competitivo oficial de <b>dobles VGC</b>. Implementado en Python sobre <b>Stable-Baselines3</b> (MaskablePPO), <b>poke-env</b> y un servidor local de <b>Pokémon Showdown</b>.</p>
+<p>Proyecto de Trabajo de Fin de Grado del Grado en Diseño y Desarrollo de Videojuegos (Especialidad de Programación) de la <b>Universidad de Diseño, Innovación y Tecnología (UDIT)</b>, curso académico 2025–2026.</p>
+<blockquote class="doxtable">
+<p><b>Autor:</b> David Díaz Espinosa de los Monteros </p>
+</blockquote>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Qué hace</h1>
+<ul>
+<li>Entrena agentes de aprendizaje por refuerzo (PPO con <em>action masking</em> mediante <b>MaskablePPO</b>) para combates Pokémon, en formatos <b>singles</b> y <b>dobles VGC</b>.</li>
+<li>Soporta dos arquitecturas de red comparables: un <b>perceptrón multicapa (MLP)</b> y un <b>extractor basado en atención (Transformer)</b>.</li>
+<li>Permite cuatro modalidades de oponente durante el entrenamiento:<ul>
+<li><span class="tt">random</span> — jugador aleatorio (acciones legales).</li>
+<li><span class="tt">maxpower</span> — siempre el movimiento de mayor potencia base.</li>
+<li><span class="tt">heuristic</span> — <span class="tt">SimpleHeuristicsPlayer</span> de poke-env (reglas básicas de efectividad y cambio).</li>
+<li><span class="tt">self</span> — <em>self-play</em> (el rival usa la política actual del agente).</li>
+</ul>
+</li>
+<li>Una vez entrenado, el agente puede aceptar desafíos en el simulador local o jugar en la ladder del servidor oficial <span class="tt">play.pokemonshowdown.com</span> (con cuenta registrada).</li>
+<li>Incluye utilidades para:<ul>
+<li><b>Enfrentar dos modelos</b> entre sí o un modelo contra rivales de referencia: <span class="tt"><a class="el" href="battle__models_8py.html">battle_models.py</a></span>.</li>
+<li><b>Arrancar self-play</b> desde un modelo ya entrenado, sin sobrescribirlo: <span class="tt"><a class="el" href="selfplay__from_8py.html">selfplay_from.py</a></span>.</li>
+<li><b>Exportar las gráficas</b> de TensorBoard a PNG con etiquetas y ejes en español: <span class="tt"><a class="el" href="plot__metrics_8py.html">plot_metrics.py</a></span>.</li>
+<li><b>Añadir formatos VGC vigentes</b> al servidor adaptado: <span class="tt"><a class="el" href="patch__server__formats_8py.html">patch_server_formats.py</a></span>.</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Cómo navegar esta documentación</h1>
+<ul>
+<li><b>Paquetes</b> (barra lateral izquierda) — agrupa los módulos por carpeta (<span class="tt">src/</span>, raíz del proyecto). Cada módulo abre con su docstring, sus constantes globales y la lista de funciones y clases.</li>
+<li><b>Clases</b> — listado de todas las clases del proyecto (entornos Gymnasium, jugadores, extractor Transformer, callback de TensorBoard, etc.) con su diagrama de herencia.</li>
+<li><b>Archivos</b> — listado completo de los <span class="tt">.py</span> con acceso al código fuente coloreado y referencias cruzadas.</li>
+<li><b>Buscador</b> (arriba a la derecha) — busca por nombre de función, clase, archivo o palabra suelta del cuerpo del código.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Estructura del proyecto</h1>
+<div class="fragment"><div class="line">src/                            Código fuente propio (módulos importables)</div>
+<div class="line">├── singles_env.py              MySinglesEnv  — entorno de combates individuales</div>
+<div class="line">├── doubles_env.py              MyDoublesEnv  — entorno de combates dobles VGC</div>
+<div class="line">├── rl_wrapper.py               OpponentSamplingEnv — envoltorio de un solo agente</div>
+<div class="line">├── features.py                 Construcción de la observación detallada</div>
+<div class="line">├── policy.py                   Argumentos de política MLP y extractor Transformer</div>
+<div class="line">├── callbacks.py                WinRateCallback para TensorBoard</div>
+<div class="line">├── poke_env_patch.py           Parche de poke-env (Behemoth Blade / Bash)</div>
+<div class="line">└── teams.py                    Constructor de equipos para los entornos de dobles</div>
+<div class="line"> </div>
+<div class="line">train_singles.py, train_doubles.py   Scripts de entrenamiento</div>
+<div class="line">play.py                          Aceptar desafíos en local o jugar en ladder</div>
+<div class="line">battle_models.py                 Enfrentar dos modelos o uno contra baselines</div>
+<div class="line">selfplay_from.py                 Arrancar self-play desde un modelo entrenado</div>
+<div class="line">plot_metrics.py                  Exportar gráficas de TensorBoard</div>
+<div class="line">patch_server_formats.py          Añadir formatos VGC vigentes al servidor</div>
+<div class="line">test_env.py                      Test rápido del entorno</div>
+<div class="line">check_teams.py                   Validador de equipos contra el servidor</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Más documentación</h1>
+<ul>
+<li><span class="tt">README.md</span> — versión completa del README del proyecto (con tabla de contenidos, requisitos, comandos y bibliotecas de terceros).</li>
+<li><span class="tt">INSTALACION.txt</span> — guía paso a paso para reinstalar el proyecto en un equipo desde cero.</li>
+<li><span class="tt">COMANDOS.txt</span> — recetario de comandos del proyecto por temas (entrenar, jugar, enfrentar modelos, métricas, etc.).</li>
+<li><span class="tt">_build_release/README.md</span> — documentación de los scripts que generan el binario distribuible. </li>
+</ul>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Miembros de clases - Variables</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="contents">
+<div class="textblock">Lista de todas las variables con enlaces a las clases a las que pertenecen:</div><br/>
+<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="#index__">_</a></div>
+
+
+<h3 class="doxsection"><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>_env&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_executor&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_factory&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6dfb18c04118987ce3227ce7e667b82f">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_inner&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#af8a6ddc58c2d81775639dfa79531b158">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#ae7722a7c78d4e5369a49e698994a558f">src.singles_env.SinglesGymEnv</a></li>
+<li>_is_doubles&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_last_mask&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_mask_len&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_model&#160;:&#160;<a class="el" href="classplay_1_1_r_l_doubles_player.html#aec1d4d38c727dbfb454c227fa516793f">play.RLDoublesPlayer</a>, <a class="el" href="classplay_1_1_r_l_singles_player.html#a7479a95b5b3fe0c1633c98b4136a40d8">play.RLSinglesPlayer</a></li>
+<li>_opponent&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#ab1249fb04893ffcc6c74400fa504f034">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a4d8295c7912bc8bfcf7cd70ea7ceca8a">src.singles_env.SinglesGymEnv</a></li>
+<li>_opponent_model&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_results&#160;:&#160;<a class="el" href="classsrc_1_1callbacks_1_1_win_rate_callback.html#a880c16f01840b1e12cb4bb34d0583f9c">src.callbacks.WinRateCallback</a></li>
+<li>_segments&#160;:&#160;<a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#a1a7331f6d4c240ec4822355eb4990f70">src.policy.BattleTransformerExtractor</a></li>
+<li>_step_timeout&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a769720bdd679f747d6bc4c4cdbbc99a5">src.rl_wrapper.OpponentSamplingEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>action_space&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a93a55ab3c7636687acd47232e2d66129">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a3495bc5d6abaa76900aa77134ee241ca">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>cls&#160;:&#160;<a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#a13961175595ad9aec69417526011f8e1">src.policy.BattleTransformerExtractor</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>encoder&#160;:&#160;<a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#a69ffe59ac8f5382fdeab6dbb221318f7">src.policy.BattleTransformerExtractor</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>log_freq&#160;:&#160;<a class="el" href="classsrc_1_1callbacks_1_1_win_rate_callback.html#adc653f18d29c0bb3c71578bfe9ff65d2">src.callbacks.WinRateCallback</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>metadata&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a112308d2760fd43ee7a1879f8f86c5a1">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6b482af728866782f1f194e399e0c40f">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#adc77c31254f2db959925e0c2ec96dca3">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>observation_space&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a62202824cc16e75573c2f570c3b2b0e2">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ae631a77f06d38b3820adaae2e0a7bfa7">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a7e59f274e1ccf1301ac2b790805abd77">src.singles_env.SinglesGymEnv</a></li>
+<li>observation_spaces&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_my_doubles_env.html#a161323039958455e5a61b2d14abd81c3">src.doubles_env.MyDoublesEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_my_singles_env.html#aa93c5122351f4834b9be3337db7acc72">src.singles_env.MySinglesEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>packed_teams&#160;:&#160;<a class="el" href="classsrc_1_1teams_1_1_random_team_builder.html#ad9a39f003f7f5145405ab2f756ba9606">src.teams.RandomTeamBuilder</a></li>
+<li>proj&#160;:&#160;<a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#af52955d590fde51492bee6a583c7cac6">src.policy.BattleTransformerExtractor</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>team_files&#160;:&#160;<a class="el" href="classsrc_1_1teams_1_1_random_team_builder.html#a022608cac2dfd326041c0c6effecda85">src.teams.RandomTeamBuilder</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

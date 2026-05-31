@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Referencia del espacio de nombres battle_models</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacebattle__models.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del espacio de nombres battle_models</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a67f603078cfab4c7af4606532a4dd6ec" id="r_a67f603078cfab4c7af4606532a4dd6ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a67f603078cfab4c7af4606532a4dd6ec">check_server</a> (<a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> port)</td></tr>
+<tr class="memitem:a9baf08ca8150caa45339b44de22ac4ab" id="r_a9baf08ca8150caa45339b44de22ac4ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9baf08ca8150caa45339b44de22ac4ab">load_model</a> (<a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> mode, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> battle_format, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> policy, <a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> run_id, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag=&quot;&quot;)</td></tr>
+<tr class="memitem:a24b3c10d491dfd0c63cde19adcdcf1cc" id="r_a24b3c10d491dfd0c63cde19adcdcf1cc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a24b3c10d491dfd0c63cde19adcdcf1cc">make_agent</a> (spec, mode, battle_format, team_builder, server, run_id, name, tag=&quot;&quot;)</td></tr>
+<tr class="memitem:ad298fcec3479b140c0c92154d4a8bff0" id="r_ad298fcec3479b140c0c92154d4a8bff0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad298fcec3479b140c0c92154d4a8bff0">battle</a> (<a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> mode, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> battle_format, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a>|<a class="el" href="#ae474bd8e494e8d1b3c235ca8ece64ba4">None</a> team_path, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> spec_a, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> spec_b, <a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> run_id_a, <a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> run_id_b, <a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> n_battles, <a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a> port, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag_a=&quot;&quot;, <a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag_b=&quot;&quot;)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a24a39b66ebb81d59c66eca67d6e990c1" id="r_a24a39b66ebb81d59c66eca67d6e990c1"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="#a24a39b66ebb81d59c66eca67d6e990c1">RL_SPECS</a> = (&quot;mlp&quot;, &quot;transformer&quot;)</td></tr>
+<tr class="memitem:a5ba8a65968fcc03b352fe112d64617ec" id="r_a5ba8a65968fcc03b352fe112d64617ec"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a5ba8a65968fcc03b352fe112d64617ec">BASELINE_CLS</a></td></tr>
+<tr class="memitem:a1ae174ce8ea89b4f76479144cf054c40" id="r_a1ae174ce8ea89b4f76479144cf054c40"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1ae174ce8ea89b4f76479144cf054c40">AGENT_CHOICES</a> = list(<a class="el" href="#a24a39b66ebb81d59c66eca67d6e990c1">RL_SPECS</a>) + list(<a class="el" href="#a5ba8a65968fcc03b352fe112d64617ec">BASELINE_CLS</a>)</td></tr>
+<tr class="memitem:a9247553c9091a4813f432f1ec99f231d" id="r_a9247553c9091a4813f432f1ec99f231d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9247553c9091a4813f432f1ec99f231d">parser</a></td></tr>
+<tr class="memitem:ae45308c5f36c268a6497a4fcabe7b576" id="r_ae45308c5f36c268a6497a4fcabe7b576"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae45308c5f36c268a6497a4fcabe7b576">choices</a></td></tr>
+<tr class="memitem:a4e505c3d7e9e82bc074c81b1099a8cec" id="r_a4e505c3d7e9e82bc074c81b1099a8cec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4e505c3d7e9e82bc074c81b1099a8cec">required</a></td></tr>
+<tr class="memitem:a0401685203377d6ccef4cb1533363c94" id="r_a0401685203377d6ccef4cb1533363c94"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0401685203377d6ccef4cb1533363c94">type</a></td></tr>
+<tr class="memitem:a8fcdca3f69afed84436b6d4d45ba5ef2" id="r_a8fcdca3f69afed84436b6d4d45ba5ef2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td></tr>
+<tr class="memitem:ac17f5b4e15f47a69ec531729d0b25fdf" id="r_ac17f5b4e15f47a69ec531729d0b25fdf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac17f5b4e15f47a69ec531729d0b25fdf">default</a></td></tr>
+<tr class="memitem:ae474bd8e494e8d1b3c235ca8ece64ba4" id="r_ae474bd8e494e8d1b3c235ca8ece64ba4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae474bd8e494e8d1b3c235ca8ece64ba4">None</a></td></tr>
+<tr class="memitem:ad8774529c4298af6c3e1c433b294d103" id="r_ad8774529c4298af6c3e1c433b294d103"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad8774529c4298af6c3e1c433b294d103">dest</a></td></tr>
+<tr class="memitem:ab8cd9fe810afb263c270a947faaf8d8f" id="r_ab8cd9fe810afb263c270a947faaf8d8f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab8cd9fe810afb263c270a947faaf8d8f">help</a></td></tr>
+<tr class="memitem:a7c86480ba98f01224953eac661b5c38f" id="r_a7c86480ba98f01224953eac661b5c38f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td></tr>
+<tr class="memitem:af00b99b170268a11c04ea373954cd1d8" id="r_af00b99b170268a11c04ea373954cd1d8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af00b99b170268a11c04ea373954cd1d8">args</a> = parser.parse_args()</td></tr>
+<tr class="memitem:a4587b3ec1b23fd082cdf490389c27157" id="r_a4587b3ec1b23fd082cdf490389c27157"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4587b3ec1b23fd082cdf490389c27157">fmt</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><pre class="fragment">Enfrenta dos agentes entre sí en el servidor local y reporta el resultado.
+
+Cada lado (--a y --b) puede ser:
+  - Un modelo entrenado:  mlp | transformer
+  - Un baseline de poke-env:  random | maxpower | heuristic
+
+Se puede medir, por ejemplo:
+  - MLP vs Transformer
+  - tu modelo vs RandomPlayer / MaxBasePowerPlayer / SimpleHeuristicsPlayer
+  - dos seeds del mismo tipo
+
+Los agentes RL usan la misma observación (src/features.py), por lo que
+arquitecturas distintas pueden enfrentarse sin problema.
+
+Uso (dobles VGC, tu MLP vs el heurístico de poke-env):
+    python battle_models.py --mode doubles --format gen9vgc2026regi \\
+        --team teams/vgc/I1.txt --a mlp --b heuristic -n 50
+
+Uso (singles, transformer vs MaxDamage):
+    python battle_models.py --mode singles --a transformer --b maxpower -n 50
+
+Requiere el servidor local corriendo:
+    node pokemon-showdown start --no-security
+</pre> </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ad298fcec3479b140c0c92154d4a8bff0" name="ad298fcec3479b140c0c92154d4a8bff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad298fcec3479b140c0c92154d4a8bff0">&#9670;&#160;</a></span>battle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>battle_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> | <a class="el" href="#ae474bd8e494e8d1b3c235ca8ece64ba4">None</a></td>          <td class="paramname"><span class="paramname"><em>team_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>spec_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>spec_b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>run_id_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>run_id_b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>n_battles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> </td>          <td class="paramname"><span class="paramname"><em>tag_a</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> </td>          <td class="paramname"><span class="paramname"><em>tag_b</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00107">107</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="battle__models_8py_source.html#l00059">check_server()</a> y <a class="el" href="battle__models_8py_source.html#l00085">make_agent()</a>.</p>
+
+</div>
+</div>
+<a id="a67f603078cfab4c7af4606532a4dd6ec" name="a67f603078cfab4c7af4606532a4dd6ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f603078cfab4c7af4606532a4dd6ec">&#9670;&#160;</a></span>check_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">check_server </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00059">59</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="battle__models_8py_source.html#l00119">battle()</a>.</p>
+
+</div>
+</div>
+<a id="a9baf08ca8150caa45339b44de22ac4ab" name="a9baf08ca8150caa45339b44de22ac4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9baf08ca8150caa45339b44de22ac4ab">&#9670;&#160;</a></span>load_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">load_model </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>battle_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a></td>          <td class="paramname"><span class="paramname"><em>policy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7c86480ba98f01224953eac661b5c38f">int</a></td>          <td class="paramname"><span class="paramname"><em>run_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> </td>          <td class="paramname"><span class="paramname"><em>tag</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00072">72</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="battle__models_8py_source.html#l00162">str</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="battle__models_8py_source.html#l00085">make_agent()</a>.</p>
+
+</div>
+</div>
+<a id="a24b3c10d491dfd0c63cde19adcdcf1cc" name="a24b3c10d491dfd0c63cde19adcdcf1cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b3c10d491dfd0c63cde19adcdcf1cc">&#9670;&#160;</a></span>make_agent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">make_agent </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>spec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>battle_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>team_builder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>server</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>run_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tag</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Crea un jugador: modelo RL (mlp/transformer) o baseline de poke-env.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00085">85</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="battle__models_8py_source.html#l00072">load_model()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="battle__models_8py_source.html#l00119">battle()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a1ae174ce8ea89b4f76479144cf054c40" name="a1ae174ce8ea89b4f76479144cf054c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae174ce8ea89b4f76479144cf054c40">&#9670;&#160;</a></span>AGENT_CHOICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.AGENT_CHOICES = list(<a class="el" href="#a24a39b66ebb81d59c66eca67d6e990c1">RL_SPECS</a>) + list(<a class="el" href="#a5ba8a65968fcc03b352fe112d64617ec">BASELINE_CLS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00056">56</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="af00b99b170268a11c04ea373954cd1d8" name="af00b99b170268a11c04ea373954cd1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00b99b170268a11c04ea373954cd1d8">&#9670;&#160;</a></span>args</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.args = parser.parse_args()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00189">189</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a5ba8a65968fcc03b352fe112d64617ec" name="a5ba8a65968fcc03b352fe112d64617ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba8a65968fcc03b352fe112d64617ec">&#9670;&#160;</a></span>BASELINE_CLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict battle_models.BASELINE_CLS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  {</div>
+<div class="line">    <span class="stringliteral">&quot;random&quot;</span>: RandomPlayer,</div>
+<div class="line">    <span class="stringliteral">&quot;maxpower&quot;</span>: MaxBasePowerPlayer,</div>
+<div class="line">    <span class="stringliteral">&quot;heuristic&quot;</span>: SimpleHeuristicsPlayer,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00051">51</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="ae45308c5f36c268a6497a4fcabe7b576" name="ae45308c5f36c268a6497a4fcabe7b576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45308c5f36c268a6497a4fcabe7b576">&#9670;&#160;</a></span>choices</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.choices</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00160">160</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="ac17f5b4e15f47a69ec531729d0b25fdf" name="ac17f5b4e15f47a69ec531729d0b25fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17f5b4e15f47a69ec531729d0b25fdf">&#9670;&#160;</a></span>default</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.default</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00162">162</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="ad8774529c4298af6c3e1c433b294d103" name="ad8774529c4298af6c3e1c433b294d103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8774529c4298af6c3e1c433b294d103">&#9670;&#160;</a></span>dest</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.dest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00162">162</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a4587b3ec1b23fd082cdf490389c27157" name="a4587b3ec1b23fd082cdf490389c27157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4587b3ec1b23fd082cdf490389c27157">&#9670;&#160;</a></span>fmt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.fmt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  args.battle_format <span class="keywordflow">or</span> (</div>
+<div class="line">        <span class="stringliteral">&quot;gen9vgc2026regi&quot;</span> <span class="keywordflow">if</span> args.mode == <span class="stringliteral">&quot;doubles&quot;</span> <span class="keywordflow">else</span> <span class="stringliteral">&quot;gen9randombattle&quot;</span></div>
+<div class="line">    )</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00191">191</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="ab8cd9fe810afb263c270a947faaf8d8f" name="ab8cd9fe810afb263c270a947faaf8d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8cd9fe810afb263c270a947faaf8d8f">&#9670;&#160;</a></span>help</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.help</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00163">163</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a7c86480ba98f01224953eac661b5c38f" name="a7c86480ba98f01224953eac661b5c38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c86480ba98f01224953eac661b5c38f">&#9670;&#160;</a></span>int</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00177">177</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="ae474bd8e494e8d1b3c235ca8ece64ba4" name="ae474bd8e494e8d1b3c235ca8ece64ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae474bd8e494e8d1b3c235ca8ece64ba4">&#9670;&#160;</a></span>None</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.None</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00162">162</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a9247553c9091a4813f432f1ec99f231d" name="a9247553c9091a4813f432f1ec99f231d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9247553c9091a4813f432f1ec99f231d">&#9670;&#160;</a></span>parser</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.parser</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  argparse.ArgumentParser(</div>
+<div class="line">        description=<span class="stringliteral">&quot;Enfrenta dos agentes (modelos RL y/o baselines de poke-env).&quot;</span></div>
+<div class="line">    )</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00157">157</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a4e505c3d7e9e82bc074c81b1099a8cec" name="a4e505c3d7e9e82bc074c81b1099a8cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e505c3d7e9e82bc074c81b1099a8cec">&#9670;&#160;</a></span>required</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.required</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00160">160</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a24a39b66ebb81d59c66eca67d6e990c1" name="a24a39b66ebb81d59c66eca67d6e990c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a39b66ebb81d59c66eca67d6e990c1">&#9670;&#160;</a></span>RL_SPECS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple battle_models.RL_SPECS = (&quot;mlp&quot;, &quot;transformer&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00050">50</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+<a id="a8fcdca3f69afed84436b6d4d45ba5ef2" name="a8fcdca3f69afed84436b6d4d45ba5ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcdca3f69afed84436b6d4d45ba5ef2">&#9670;&#160;</a></span>str</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.str</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00162">162</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="battle__models_8py_source.html#l00072">load_model()</a>.</p>
+
+</div>
+</div>
+<a id="a0401685203377d6ccef4cb1533363c94" name="a0401685203377d6ccef4cb1533363c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0401685203377d6ccef4cb1533363c94">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">battle_models.type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="battle__models_8py_source.html#l00162">162</a> del archivo <a class="el" href="battle__models_8py_source.html">battle_models.py</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacebattle__models.html">battle_models</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

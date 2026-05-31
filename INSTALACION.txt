@@ -1,0 +1,147 @@
+===========================================================================
+  DavidDiaz_TFG - INSTALACIÓN DESDE CERO
+  Bots de Pokémon (singles y dobles VGC) con Aprendizaje por Refuerzo (PPO)
+===========================================================================
+
+Esta guía explica como dejar el proyecto funcionando en un ordenador desde cero. Para el día a día (entrenar, jugar, TensorBoard), consulta
+COMANDOS.txt
+
+IMPORTANTE: al descargar el proyecto NO vienen incluidas (están en .gitignore):
+  - el entorno virtual  .venv/        -> se crea en el Paso 2
+  - el servidor          pokemon-showdown/  -> se clona en el Paso 3
+  - los logs             logs/         -> se generan al entrenar
+Por eso hay que reconstruirlos siguiendo estos pasos.
+
+Resumen: instalar Python + Node + Git  ->  descargar proyecto  ->  crear venv e
+instalar dependencias  ->  clonar y compilar el servidor fork  ->  arrancar el
+servidor en una terminal  ->  entrenar/jugar en otra.
+
+
+---------------------------------------------------------------------------
+ PASO 0. SOFTWARE BASE (lo que no trae Windows)
+---------------------------------------------------------------------------
+
+Descarga e instala estos tres programas:
+
+  1) Python 3.10 - 3.13     https://www.python.org/downloads/
+     >>> En el instalador, MARCA la casilla "Add python.exe to PATH" <<<
+
+  2) Node.js (versión LTS)  https://nodejs.org
+     (necesario para el servidor de Pokémon Showdown)
+
+  3) Git                    https://git-scm.com/downloads
+     (para clonar el proyecto y el servidor)
+
+Abre una terminal nueva (PowerShell o CMD) y comprueba que responden:
+    python --version
+    node --version
+    git --version
+
+
+---------------------------------------------------------------------------
+ PASO 1. CLONAR EL PROYECTO (SOLO SI ESTÁS EN GITHUB) 
+---------------------------------------------------------------------------
+
+    git clone <URL_DEL_REPOSITORIO> DavidDiaz_TFG
+    cd DavidDiaz_TFG
+
+(O descomprime el ZIP del proyecto y entra en su carpeta.)
+Todos los comandos siguientes se ejecutan DESDE la carpeta del proyecto.
+
+
+---------------------------------------------------------------------------
+ PASO 2. ENTORNO VIRTUAL + DEPENDENCIAS DE PYTHON
+---------------------------------------------------------------------------
+
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+
+- Tras activar verás "(.venv)" al principio del prompt.
+- Esto instala TODO lo necesario para entrenar, jugar y generar las graficas
+  (numpy, gymnasium, etc. se instalan automáticamente como dependencias).
+
+Para reproducir el entorno EXACTO ya verificado (todas las versiones, incluidas
+las transitivas):
+    pip install -r requirements.lock
+
+PyTorch se instala en su build de CPU por defecto. Para aprovechar GPU NVIDIA:
+    pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cu121
+
+
+---------------------------------------------------------------------------
+ PASO 3. SERVIDOR POKEMON SHOWDOWN (fork de vgc-bench) SOLO SI HAS CLONADO EL REPOSITORIO DE GITHUB
+---------------------------------------------------------------------------
+
+El servidor NO viene en la descarga. Se clona el FORK de vgc-bench DENTRO de la
+carpeta del proyecto (arregla bugs del servidor estándar que cuelgan los combates
+largos de dobles):
+
+    git clone -b vgc-bench https://github.com/cameronangliss/pokemon-showdown.git
+    cd pokemon-showdown
+    npm i
+    node build
+
+(OPCIONAL, recomendado) Añadir al fork los formatos VGC vigentes que le falten.
+Desde la RAIZ del proyecto y con el .venv activado:
+    cd ..
+    python patch_server_formats.py
+    cd pokemon-showdown
+    node build
+
+(Tras un clon limpio del servidor hay que volver a aplicar este patch.)
+
+
+---------------------------------------------------------------------------
+ PASO 4. ARRANCAR EL SERVIDOR (Terminal 1 - déjala abierta)
+---------------------------------------------------------------------------
+
+    cd pokemon-showdown
+    node pokemon-showdown start --no-security
+
+Espera a ver:  "Worker 1 now listening on 0.0.0.0:8000"
+Cliente web (opcional):  http://localhost:8000
+Con --no-security NO hace falta login.
+
+Solo puede haber UN servidor en el puerto 8000. Si ves "bind EADDRINUSE
+0.0.0.0:8000", ya tienes otro abierto: ciérralo (Ctrl+C) antes.
+
+
+---------------------------------------------------------------------------
+ PASO 5. ENTRENAR / JUGAR (Terminal 2 - con el .venv activado)
+---------------------------------------------------------------------------
+
+# Si es una terminal nueva, activa primero el entorno:
+    .venv\Scripts\activate
+
+# Entrenar dobles VGC:
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi
+
+# Probar el bot (acepta desafíos; lo retas desde http://localhost:8000):
+    python play.py --mode doubles --username MiBot --run_id 1 --team teams/vgc/I1.txt --format gen9vgc2026regi
+
+# Ver el progreso del entrenamiento (en otra terminal, desde la carpeta del proyecto):
+    tensorboard --logdir logs
+
+Más comandos y opciones (singles, transformer, self-play, evaluación,
+graficas, etc.):  ver COMANDOS.txt
+
+
+---------------------------------------------------------------------------
+ PROBLEMAS FRECUENTES
+---------------------------------------------------------------------------
+
+- "python no se reconoce..."  -> no marcaste "Add to PATH" al instalar Python;
+  reinstálalo marcándolo, o usa "py" en lugar de "python".
+
+- "No hay servidor Showdown en localhost:8000"  -> arranca el servidor (Paso 4)
+  en otra terminal antes de entrenar/jugar.
+
+- "bind EADDRINUSE 0.0.0.0:8000"  -> ya hay un servidor abierto en ese puerto.
+
+- Errores de compilación en "npm i"  -> asegúrate de tener Node.js LTS reciente.
+
+- Para ver el ERROR REAL si un entrenamiento falla (sin que la recuperación
+  automática lo oculte):  set POKE_ENV_DEBUG=1   (cmd)  /  $env:POKE_ENV_DEBUG="1"
+  (PowerShell)  antes de lanzarlo; vuelve a "0" para entrenamientos normales.
+===========================================================================

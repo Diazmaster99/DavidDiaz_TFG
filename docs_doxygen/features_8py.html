@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Referencia del archivo src/features.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('features_8py.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo features.py</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="features_8py_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Espacios de nombres</h2></td></tr>
+<tr class="memitem:src" id="r_src"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacesrc.html">src</a></td></tr>
+<tr class="memitem:src_2Efeatures" id="r_src_2Efeatures"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html">src.features</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:adf5eb877a93f3451be72fb6fe1ee881e" id="r_adf5eb877a93f3451be72fb6fe1ee881e"><td class="memItemLeft">list[tuple[str, int, int]]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#adf5eb877a93f3451be72fb6fe1ee881e">src.features.singles_token_segments</a> ()</td></tr>
+<tr class="memitem:ab0dd5151db47be8c17c4ce1daaa17994" id="r_ab0dd5151db47be8c17c4ce1daaa17994"><td class="memItemLeft">list[tuple[str, int, int]]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ab0dd5151db47be8c17c4ce1daaa17994">src.features.doubles_token_segments</a> ()</td></tr>
+<tr class="memitem:a5d088280a8f20013edb453a404198659" id="r_a5d088280a8f20013edb453a404198659"><td class="memItemLeft">set[str]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a5d088280a8f20013edb453a404198659">src.features._active_names</a> (container)</td></tr>
+<tr class="memitem:a6249ff8fc9de200aed9f47406e000330" id="r_a6249ff8fc9de200aed9f47406e000330"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a6249ff8fc9de200aed9f47406e000330">src.features._coerce_float</a> (value, float default=0.0)</td></tr>
+<tr class="memitem:ac6b1aeba1c0bfbb91a9626fa7afc6f6c" id="r_ac6b1aeba1c0bfbb91a9626fa7afc6f6c"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ac6b1aeba1c0bfbb91a9626fa7afc6f6c">src.features._type_multihot</a> (mon)</td></tr>
+<tr class="memitem:ae0296ef476c245bb6450d12470ca8629" id="r_ae0296ef476c245bb6450d12470ca8629"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ae0296ef476c245bb6450d12470ca8629">src.features._status_onehot</a> (mon)</td></tr>
+<tr class="memitem:a56d4470295aa11024da36eeac49097fa" id="r_a56d4470295aa11024da36eeac49097fa"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a56d4470295aa11024da36eeac49097fa">src.features._boosts</a> (mon)</td></tr>
+<tr class="memitem:a1699c4f077578ab02aa1abd913304bb1" id="r_a1699c4f077578ab02aa1abd913304bb1"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a1699c4f077578ab02aa1abd913304bb1">src.features._base_stats</a> (mon)</td></tr>
+<tr class="memitem:ab1b28d753de18224352f60fff0a3250b" id="r_ab1b28d753de18224352f60fff0a3250b"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ab1b28d753de18224352f60fff0a3250b">src.features._active_features</a> (mon)</td></tr>
+<tr class="memitem:a18602ca202d21a7a11dd4f9a96118b40" id="r_a18602ca202d21a7a11dd4f9a96118b40"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a18602ca202d21a7a11dd4f9a96118b40">src.features._reserve_features</a> (mon)</td></tr>
+<tr class="memitem:ad64f967d83db2f3c608834b44cc00f9f" id="r_ad64f967d83db2f3c608834b44cc00f9f"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ad64f967d83db2f3c608834b44cc00f9f">src.features._move_features</a> (move, opponents)</td></tr>
+<tr class="memitem:a95d1e4b307b89b359cbf96d536794ac1" id="r_a95d1e4b307b89b359cbf96d536794ac1"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a95d1e4b307b89b359cbf96d536794ac1">src.features._moves_block</a> (active_mon, opponents, int move_feat_len)</td></tr>
+<tr class="memitem:afac8edcdb002bd9243d0394d588ae59e" id="r_afac8edcdb002bd9243d0394d588ae59e"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#afac8edcdb002bd9243d0394d588ae59e">src.features._global_features</a> (battle)</td></tr>
+<tr class="memitem:a3bc04a4d50169875387a0307cfdfe76a" id="r_a3bc04a4d50169875387a0307cfdfe76a"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a3bc04a4d50169875387a0307cfdfe76a">src.features._side_features</a> (conditions)</td></tr>
+<tr class="memitem:a8c3e7089435d7c555ea7ea116982e680" id="r_a8c3e7089435d7c555ea7ea116982e680"><td class="memItemLeft">npt.NDArray[np.float32]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a8c3e7089435d7c555ea7ea116982e680">src.features.build_singles_obs</a> (Battle battle)</td></tr>
+<tr class="memitem:aa24aac4e784fc6e6004f9d410cda6c4e" id="r_aa24aac4e784fc6e6004f9d410cda6c4e"><td class="memItemLeft">npt.NDArray[np.float32]&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#aa24aac4e784fc6e6004f9d410cda6c4e">src.features.build_doubles_obs</a> (DoubleBattle battle)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:acd98d5ae8f343920200ad437e9dcc565" id="r_acd98d5ae8f343920200ad437e9dcc565"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#acd98d5ae8f343920200ad437e9dcc565">src.features._CHART</a> = GenData.from_gen(9).type_chart</td></tr>
+<tr class="memitem:a8829053a8ddcbdc923f69317711c6a56" id="r_a8829053a8ddcbdc923f69317711c6a56"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a8829053a8ddcbdc923f69317711c6a56">src.features.TYPE_NAMES</a></td></tr>
+<tr class="memitem:a5180fa27bcb992c3689b52b004715b84" id="r_a5180fa27bcb992c3689b52b004715b84"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a5180fa27bcb992c3689b52b004715b84">src.features.TYPE_IDX</a> = {n: i for i, n in enumerate(<a class="el" href="namespacesrc_1_1features.html#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)}</td></tr>
+<tr class="memitem:aa895f224114193637a52cbc180d23db3" id="r_aa895f224114193637a52cbc180d23db3"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#aa895f224114193637a52cbc180d23db3">src.features.STATUS_NAMES</a> = [&quot;BRN&quot;, &quot;FRZ&quot;, &quot;PAR&quot;, &quot;PSN&quot;, &quot;SLP&quot;, &quot;TOX&quot;]</td></tr>
+<tr class="memitem:aaea275a03688ee9b905b1d8eaf379bef" id="r_aaea275a03688ee9b905b1d8eaf379bef"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#aaea275a03688ee9b905b1d8eaf379bef">src.features.WEATHER_NAMES</a></td></tr>
+<tr class="memitem:a03efd2d9dff866bfdf404f94e0fd7060" id="r_a03efd2d9dff866bfdf404f94e0fd7060"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a03efd2d9dff866bfdf404f94e0fd7060">src.features.FIELD_NAMES</a></td></tr>
+<tr class="memitem:a7b4371b047cf70cbd1fb949dcab387fd" id="r_a7b4371b047cf70cbd1fb949dcab387fd"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a7b4371b047cf70cbd1fb949dcab387fd">src.features.SIDE_NAMES</a></td></tr>
+<tr class="memitem:a4d0a81478bad24d94d08f5a6fd0dba12" id="r_a4d0a81478bad24d94d08f5a6fd0dba12"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a4d0a81478bad24d94d08f5a6fd0dba12">src.features.BOOST_KEYS</a> = [&quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;, &quot;accuracy&quot;, &quot;evasion&quot;]</td></tr>
+<tr class="memitem:abac91e92a1710c8ce7d213cefba7ae4c" id="r_abac91e92a1710c8ce7d213cefba7ae4c"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#abac91e92a1710c8ce7d213cefba7ae4c">src.features.STAT_KEYS</a> = [&quot;hp&quot;, &quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;]</td></tr>
+<tr class="memitem:a67edcf80d726a9b72527d12268cddcda" id="r_a67edcf80d726a9b72527d12268cddcda"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a67edcf80d726a9b72527d12268cddcda">src.features.N_TYPES</a> = len(<a class="el" href="namespacesrc_1_1features.html#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)</td></tr>
+<tr class="memitem:a69fec565ee3cd99264caa56531cdb63a" id="r_a69fec565ee3cd99264caa56531cdb63a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a69fec565ee3cd99264caa56531cdb63a">src.features.GLOBAL_FEATS</a> = len(<a class="el" href="namespacesrc_1_1features.html#aaea275a03688ee9b905b1d8eaf379bef">WEATHER_NAMES</a>) + len(<a class="el" href="namespacesrc_1_1features.html#a03efd2d9dff866bfdf404f94e0fd7060">FIELD_NAMES</a>) + 1</td></tr>
+<tr class="memitem:ae9d131d0d5e63a7a73f6f1eab996a43d" id="r_ae9d131d0d5e63a7a73f6f1eab996a43d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ae9d131d0d5e63a7a73f6f1eab996a43d">src.features.SIDE_FEATS</a> = len(<a class="el" href="namespacesrc_1_1features.html#a7b4371b047cf70cbd1fb949dcab387fd">SIDE_NAMES</a>)</td></tr>
+<tr class="memitem:a3d6fe38b77999831f184527dd665d07c" id="r_a3d6fe38b77999831f184527dd665d07c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a3d6fe38b77999831f184527dd665d07c">src.features.ACTIVE_FEATS</a> = 3 + len(<a class="el" href="namespacesrc_1_1features.html#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="namespacesrc_1_1features.html#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + len(<a class="el" href="namespacesrc_1_1features.html#a4d0a81478bad24d94d08f5a6fd0dba12">BOOST_KEYS</a>) + len(<a class="el" href="namespacesrc_1_1features.html#abac91e92a1710c8ce7d213cefba7ae4c">STAT_KEYS</a>)</td></tr>
+<tr class="memitem:a16c4085f46ce0c8f94658ab3b9fe7690" id="r_a16c4085f46ce0c8f94658ab3b9fe7690"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a16c4085f46ce0c8f94658ab3b9fe7690">src.features.RESERVE_FEATS</a> = 2 + len(<a class="el" href="namespacesrc_1_1features.html#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="namespacesrc_1_1features.html#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a></td></tr>
+<tr class="memitem:af19563339bf78d182ac5fdffb3ee90fe" id="r_af19563339bf78d182ac5fdffb3ee90fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#af19563339bf78d182ac5fdffb3ee90fe">src.features._MOVE_SCALARS</a> = 11</td></tr>
+<tr class="memitem:a3b21f686c737f9b170a0a25ee022e2d8" id="r_a3b21f686c737f9b170a0a25ee022e2d8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a3b21f686c737f9b170a0a25ee022e2d8">src.features.MOVE_FEATS_SINGLES</a> = <a class="el" href="namespacesrc_1_1features.html#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="namespacesrc_1_1features.html#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 1</td></tr>
+<tr class="memitem:a9a4fe45f27fddd35beb80d6095bd86b2" id="r_a9a4fe45f27fddd35beb80d6095bd86b2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a9a4fe45f27fddd35beb80d6095bd86b2">src.features.MOVE_FEATS_DOUBLES</a> = <a class="el" href="namespacesrc_1_1features.html#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="namespacesrc_1_1features.html#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 2</td></tr>
+<tr class="memitem:ab7dd5591f3afd8af65d7d291c86e4502" id="r_ab7dd5591f3afd8af65d7d291c86e4502"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ab7dd5591f3afd8af65d7d291c86e4502">src.features.SINGLES_BENCH</a> = 5</td></tr>
+<tr class="memitem:aaa21b399f3b727775b786103563f4ec8" id="r_aaa21b399f3b727775b786103563f4ec8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#aaa21b399f3b727775b786103563f4ec8">src.features.DOUBLES_BENCH</a> = 4</td></tr>
+<tr class="memitem:a64ccbc636abcbb65bcf4045c5555b758" id="r_a64ccbc636abcbb65bcf4045c5555b758"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#a64ccbc636abcbb65bcf4045c5555b758">src.features.SINGLES_OBS_SIZE</a></td></tr>
+<tr class="memitem:ab56564a076cbc6dc581705c0e88f20e8" id="r_ab56564a076cbc6dc581705c0e88f20e8"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="namespacesrc_1_1features.html#ab56564a076cbc6dc581705c0e88f20e8">src.features.DOUBLES_OBS_SIZE</a></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="features_8py.html">features.py</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

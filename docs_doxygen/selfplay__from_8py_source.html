@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Archivo de código fuente selfplay_from.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('selfplay__from_8py_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">selfplay_from.py</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="selfplay__from_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceselfplay__from.html">    1</a></span><span class="comment"># -----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"># Autor: David Díaz Espinosa de los Monteros</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"># TFG - Bot de combates Pokémon VGC con aprendizaje por refuerzo (PPO)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"># -----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">Arranca un entrenamiento de SELF-PLAY a partir de un modelo YA ENTRENADO.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral">Copia el último checkpoint de un modelo de origen a un seed nuevo marcado con un</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="stringliteral">sufijo (por defecto &#39;selfplay&#39;), de modo que:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral">  - el modelo de self-play no sobrescribe al de origen (vs random/heurístico),</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="stringliteral">  - la carpeta y el run de TensorBoard quedan claramente diferenciados</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">    (p.ej. models/doubles/&lt;formato&gt;/mlp/seed1_selfplay/ y el run</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">    &#39;doubles_seed1_selfplay&#39;),</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">  - el entrenamiento se reanuda desde ese checkpoint y continúa con --opponent self.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">Uso típico (dobles, MLP, partiendo del modelo de seed1, formato VGC):</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">    python selfplay_from.py --mode doubles --format gen9vgc2026regi --policy mlp \\</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">        --src_seed 1 --team teams/vgc/reg_i --total_steps 1500000</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">Solo copiar y mostrar el comando (sin lanzar):</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">    python selfplay_from.py --mode doubles --src_seed 1 --no-launch</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">Requisitos para lanzar: servidor Showdown corriendo (lo comprueba train_*.py).</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">import</span> argparse</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">import</span> re</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">import</span> shutil</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">import</span> subprocess</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">import</span> sys</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="" data-end="">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceselfplay__from.html#a4103209e61d085890556614179f48183">   34</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceselfplay__from.html#a4103209e61d085890556614179f48183">latest_numbered_checkpoint</a>(folder: Path):</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="stringliteral">&quot;&quot;&quot;Devuelve (ruta, pasos) del checkpoint numerado más avanzado, o (None, -1).&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    best, best_steps = <span class="keywordtype">None</span>, -1</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">for</span> p <span class="keywordflow">in</span> folder.glob(<span class="stringliteral">&quot;model_*_steps.zip&quot;</span>):</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        m = re.search(<span class="stringliteral">r&quot;model_(\d+)_steps&quot;</span>, p.stem)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> m <span class="keywordflow">and</span> int(m.group(1)) &gt; best_steps:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            best, best_steps = p, int(m.group(1))</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> best, best_steps</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+</div>
+<div class="foldopen" id="foldopen00044" data-start="" data-end="">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceselfplay__from.html#a51af30a60f9f02777c6396b8247e356f">   44</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceselfplay__from.html#a51af30a60f9f02777c6396b8247e356f">main</a>():</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ap = argparse.ArgumentParser(description=<span class="stringliteral">&quot;Copia un modelo entrenado a un seed &quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                             <span class="stringliteral">&quot;nuevo y lanza self-play diferenciado.&quot;</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    ap.add_argument(<span class="stringliteral">&quot;--mode&quot;</span>, choices=[<span class="stringliteral">&quot;doubles&quot;</span>, <span class="stringliteral">&quot;singles&quot;</span>], default=<span class="stringliteral">&quot;doubles&quot;</span>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    help=<span class="stringliteral">&quot;Modo de combate (default: doubles)&quot;</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    ap.add_argument(<span class="stringliteral">&quot;--format&quot;</span>, dest=<span class="stringliteral">&quot;battle_format&quot;</span>, default=<span class="stringliteral">&quot;gen9vgc2026regi&quot;</span>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    help=<span class="stringliteral">&quot;Formato de batalla (default: gen9vgc2026regi)&quot;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ap.add_argument(<span class="stringliteral">&quot;--policy&quot;</span>, choices=[<span class="stringliteral">&quot;mlp&quot;</span>, <span class="stringliteral">&quot;transformer&quot;</span>], default=<span class="stringliteral">&quot;mlp&quot;</span>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    help=<span class="stringliteral">&quot;Arquitectura (default: mlp)&quot;</span>)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ap.add_argument(<span class="stringliteral">&quot;--src_seed&quot;</span>, type=int, required=<span class="keyword">True</span>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    help=<span class="stringliteral">&quot;Seed del modelo ya entrenado de origen (por ejemplo el de vs heurístico)&quot;</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ap.add_argument(<span class="stringliteral">&quot;--dst_seed&quot;</span>, type=int, default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    help=<span class="stringliteral">&quot;Seed destino (default: el mismo que src_seed; la carpeta llevará el sufijo)&quot;</span>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    ap.add_argument(<span class="stringliteral">&quot;--tag&quot;</span>, default=<span class="stringliteral">&quot;selfplay&quot;</span>,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    help=<span class="stringliteral">&quot;Sufijo que diferencia el modelo de self-play (default: selfplay)&quot;</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    ap.add_argument(<span class="stringliteral">&quot;--team&quot;</span>, default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    help=<span class="stringliteral">&quot;Equipo VGC (fichero .txt o carpeta). Necesario para formatos no aleatorios.&quot;</span>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    ap.add_argument(<span class="stringliteral">&quot;--total_steps&quot;</span>, type=int, default=1_500_000,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    help=<span class="stringliteral">&quot;Pasos totales objetivo del run de self-play (incluye los ya entrenados). &quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                         <span class="stringliteral">&quot;Debe ser mayor que los pasos del checkpoint de origen.&quot;</span>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    ap.add_argument(<span class="stringliteral">&quot;--save_interval&quot;</span>, type=int, default=20_000)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    ap.add_argument(<span class="stringliteral">&quot;--port&quot;</span>, type=int, default=8000)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ap.add_argument(<span class="stringliteral">&quot;--device&quot;</span>, default=<span class="stringliteral">&quot;cpu&quot;</span>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    ap.add_argument(<span class="stringliteral">&quot;--no-launch&quot;</span>, dest=<span class="stringliteral">&quot;no_launch&quot;</span>, action=<span class="stringliteral">&quot;store_true&quot;</span>,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    help=<span class="stringliteral">&quot;Solo copia el checkpoint y muestra el comando, sin entrenar.&quot;</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    args = ap.parse_args()</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    dst_seed = args.dst_seed <span class="keywordflow">if</span> args.dst_seed <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">else</span> args.src_seed</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    base = Path(<span class="stringliteral">&quot;models&quot;</span>) / args.mode / args.battle_format / args.policy</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    src = base / f<span class="stringliteral">&quot;seed{args.src_seed}&quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    dst = base / f<span class="stringliteral">&quot;seed{dst_seed}_{args.tag}&quot;</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> <span class="keywordflow">not</span> src.exists():</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        sys.exit(f<span class="stringliteral">&quot;ERROR: no existe la carpeta de origen: {src}&quot;</span>)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    ckpt, steps = <a class="code hl_function" href="namespaceselfplay__from.html#a4103209e61d085890556614179f48183">latest_numbered_checkpoint</a>(src)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> ckpt <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        final = src / <span class="stringliteral">&quot;final.zip&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        msg = f<span class="stringliteral">&quot;ERROR: no se encontraron checkpoints numerados (model_&lt;N&gt;_steps.zip) en {src}.&quot;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> final.exists():</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            msg += (<span class="stringliteral">&quot;\n  Hay un &#39;final.zip&#39; sin número de pasos: el reanudado no lo detecta. &quot;</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <span class="stringliteral">&quot;Renómbralo a &#39;model_&lt;N&gt;_steps.zip&#39; (con N = pasos entrenados) y reintenta.&quot;</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        sys.exit(msg)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> args.total_steps &lt;= steps:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        sys.exit(f<span class="stringliteral">&quot;ERROR: --total_steps ({args.total_steps}) debe ser MAYOR que los pasos &quot;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                 f<span class="stringliteral">&quot;del checkpoint de origen ({steps}); si no, no se entrenaría nada.&quot;</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    dst.mkdir(parents=<span class="keyword">True</span>, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    target = dst / ckpt.name</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    shutil.copy2(ckpt, target)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    print(f<span class="stringliteral">&quot;OK  Copiado checkpoint de origen:\n     {ckpt}  ({steps} pasos)\n  -&gt; {target}&quot;</span>)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    train_script = f<span class="stringliteral">&quot;train_{args.mode}.py&quot;</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    cmd = [sys.executable, train_script,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>           <span class="stringliteral">&quot;--format&quot;</span>, args.battle_format,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>           <span class="stringliteral">&quot;--policy&quot;</span>, args.policy,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>           <span class="stringliteral">&quot;--opponent&quot;</span>, <span class="stringliteral">&quot;self&quot;</span>,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>           <span class="stringliteral">&quot;--run_id&quot;</span>, str(dst_seed),</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>           <span class="stringliteral">&quot;--tag&quot;</span>, args.tag,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>           <span class="stringliteral">&quot;--total_steps&quot;</span>, str(args.total_steps),</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>           <span class="stringliteral">&quot;--save_interval&quot;</span>, str(args.save_interval),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>           <span class="stringliteral">&quot;--port&quot;</span>, str(args.port),</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>           <span class="stringliteral">&quot;--device&quot;</span>, args.device]</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> args.team:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        cmd += [<span class="stringliteral">&quot;--team&quot;</span>, args.team]</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    print(<span class="stringliteral">&quot;\nComando de self-play:\n  &quot;</span> + <span class="stringliteral">&quot; &quot;</span>.join(cmd))</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> args.no_launch:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        print(<span class="stringliteral">&quot;\n(--no-launch) No se lanza el entrenamiento. Copia hecha y lista para reanudar.&quot;</span>)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    print(<span class="stringliteral">&quot;\nLanzando self-play (Ctrl+C para abortar)...\n&quot;</span>)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">raise</span> SystemExit(subprocess.call(cmd))</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="namespaceselfplay__from.html#a51af30a60f9f02777c6396b8247e356f">main</a>()</div>
+<div class="ttc" id="anamespaceselfplay__from_html_a4103209e61d085890556614179f48183"><div class="ttname"><a href="namespaceselfplay__from.html#a4103209e61d085890556614179f48183">selfplay_from.latest_numbered_checkpoint</a></div><div class="ttdeci">latest_numbered_checkpoint(Path folder)</div><div class="ttdef"><b>Definition</b> <a href="#l00034">selfplay_from.py:34</a></div></div>
+<div class="ttc" id="anamespaceselfplay__from_html_a51af30a60f9f02777c6396b8247e356f"><div class="ttname"><a href="namespaceselfplay__from.html#a51af30a60f9f02777c6396b8247e356f">selfplay_from.main</a></div><div class="ttdeci">main()</div><div class="ttdef"><b>Definition</b> <a href="#l00044">selfplay_from.py:44</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="selfplay__from_8py.html">selfplay_from.py</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

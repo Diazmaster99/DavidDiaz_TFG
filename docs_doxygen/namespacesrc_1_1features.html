@@ -1,0 +1,1039 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Referencia del espacio de nombres src.features</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacesrc_1_1features.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del espacio de nombres src.features</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:adf5eb877a93f3451be72fb6fe1ee881e" id="r_adf5eb877a93f3451be72fb6fe1ee881e"><td class="memItemLeft">list[tuple[str, int, int]]&#160;</td><td class="memItemRight"><a class="el" href="#adf5eb877a93f3451be72fb6fe1ee881e">singles_token_segments</a> ()</td></tr>
+<tr class="memitem:ab0dd5151db47be8c17c4ce1daaa17994" id="r_ab0dd5151db47be8c17c4ce1daaa17994"><td class="memItemLeft">list[tuple[str, int, int]]&#160;</td><td class="memItemRight"><a class="el" href="#ab0dd5151db47be8c17c4ce1daaa17994">doubles_token_segments</a> ()</td></tr>
+<tr class="memitem:a5d088280a8f20013edb453a404198659" id="r_a5d088280a8f20013edb453a404198659"><td class="memItemLeft">set[str]&#160;</td><td class="memItemRight"><a class="el" href="#a5d088280a8f20013edb453a404198659">_active_names</a> (container)</td></tr>
+<tr class="memitem:a6249ff8fc9de200aed9f47406e000330" id="r_a6249ff8fc9de200aed9f47406e000330"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6249ff8fc9de200aed9f47406e000330">_coerce_float</a> (value, float default=0.0)</td></tr>
+<tr class="memitem:ac6b1aeba1c0bfbb91a9626fa7afc6f6c" id="r_ac6b1aeba1c0bfbb91a9626fa7afc6f6c"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#ac6b1aeba1c0bfbb91a9626fa7afc6f6c">_type_multihot</a> (mon)</td></tr>
+<tr class="memitem:ae0296ef476c245bb6450d12470ca8629" id="r_ae0296ef476c245bb6450d12470ca8629"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#ae0296ef476c245bb6450d12470ca8629">_status_onehot</a> (mon)</td></tr>
+<tr class="memitem:a56d4470295aa11024da36eeac49097fa" id="r_a56d4470295aa11024da36eeac49097fa"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#a56d4470295aa11024da36eeac49097fa">_boosts</a> (mon)</td></tr>
+<tr class="memitem:a1699c4f077578ab02aa1abd913304bb1" id="r_a1699c4f077578ab02aa1abd913304bb1"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#a1699c4f077578ab02aa1abd913304bb1">_base_stats</a> (mon)</td></tr>
+<tr class="memitem:ab1b28d753de18224352f60fff0a3250b" id="r_ab1b28d753de18224352f60fff0a3250b"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#ab1b28d753de18224352f60fff0a3250b">_active_features</a> (mon)</td></tr>
+<tr class="memitem:a18602ca202d21a7a11dd4f9a96118b40" id="r_a18602ca202d21a7a11dd4f9a96118b40"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#a18602ca202d21a7a11dd4f9a96118b40">_reserve_features</a> (mon)</td></tr>
+<tr class="memitem:ad64f967d83db2f3c608834b44cc00f9f" id="r_ad64f967d83db2f3c608834b44cc00f9f"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#ad64f967d83db2f3c608834b44cc00f9f">_move_features</a> (move, opponents)</td></tr>
+<tr class="memitem:a95d1e4b307b89b359cbf96d536794ac1" id="r_a95d1e4b307b89b359cbf96d536794ac1"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#a95d1e4b307b89b359cbf96d536794ac1">_moves_block</a> (active_mon, opponents, int move_feat_len)</td></tr>
+<tr class="memitem:afac8edcdb002bd9243d0394d588ae59e" id="r_afac8edcdb002bd9243d0394d588ae59e"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#afac8edcdb002bd9243d0394d588ae59e">_global_features</a> (battle)</td></tr>
+<tr class="memitem:a3bc04a4d50169875387a0307cfdfe76a" id="r_a3bc04a4d50169875387a0307cfdfe76a"><td class="memItemLeft">list[float]&#160;</td><td class="memItemRight"><a class="el" href="#a3bc04a4d50169875387a0307cfdfe76a">_side_features</a> (conditions)</td></tr>
+<tr class="memitem:a8c3e7089435d7c555ea7ea116982e680" id="r_a8c3e7089435d7c555ea7ea116982e680"><td class="memItemLeft">npt.NDArray[np.float32]&#160;</td><td class="memItemRight"><a class="el" href="#a8c3e7089435d7c555ea7ea116982e680">build_singles_obs</a> (Battle battle)</td></tr>
+<tr class="memitem:aa24aac4e784fc6e6004f9d410cda6c4e" id="r_aa24aac4e784fc6e6004f9d410cda6c4e"><td class="memItemLeft">npt.NDArray[np.float32]&#160;</td><td class="memItemRight"><a class="el" href="#aa24aac4e784fc6e6004f9d410cda6c4e">build_doubles_obs</a> (DoubleBattle battle)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:acd98d5ae8f343920200ad437e9dcc565" id="r_acd98d5ae8f343920200ad437e9dcc565"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acd98d5ae8f343920200ad437e9dcc565">_CHART</a> = GenData.from_gen(9).type_chart</td></tr>
+<tr class="memitem:a8829053a8ddcbdc923f69317711c6a56" id="r_a8829053a8ddcbdc923f69317711c6a56"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a></td></tr>
+<tr class="memitem:a5180fa27bcb992c3689b52b004715b84" id="r_a5180fa27bcb992c3689b52b004715b84"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a5180fa27bcb992c3689b52b004715b84">TYPE_IDX</a> = {n: i for i, n in enumerate(<a class="el" href="#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)}</td></tr>
+<tr class="memitem:aa895f224114193637a52cbc180d23db3" id="r_aa895f224114193637a52cbc180d23db3"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a> = [&quot;BRN&quot;, &quot;FRZ&quot;, &quot;PAR&quot;, &quot;PSN&quot;, &quot;SLP&quot;, &quot;TOX&quot;]</td></tr>
+<tr class="memitem:aaea275a03688ee9b905b1d8eaf379bef" id="r_aaea275a03688ee9b905b1d8eaf379bef"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#aaea275a03688ee9b905b1d8eaf379bef">WEATHER_NAMES</a></td></tr>
+<tr class="memitem:a03efd2d9dff866bfdf404f94e0fd7060" id="r_a03efd2d9dff866bfdf404f94e0fd7060"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#a03efd2d9dff866bfdf404f94e0fd7060">FIELD_NAMES</a></td></tr>
+<tr class="memitem:a7b4371b047cf70cbd1fb949dcab387fd" id="r_a7b4371b047cf70cbd1fb949dcab387fd"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#a7b4371b047cf70cbd1fb949dcab387fd">SIDE_NAMES</a></td></tr>
+<tr class="memitem:a4d0a81478bad24d94d08f5a6fd0dba12" id="r_a4d0a81478bad24d94d08f5a6fd0dba12"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#a4d0a81478bad24d94d08f5a6fd0dba12">BOOST_KEYS</a> = [&quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;, &quot;accuracy&quot;, &quot;evasion&quot;]</td></tr>
+<tr class="memitem:abac91e92a1710c8ce7d213cefba7ae4c" id="r_abac91e92a1710c8ce7d213cefba7ae4c"><td class="memItemLeft">list&#160;</td><td class="memItemRight"><a class="el" href="#abac91e92a1710c8ce7d213cefba7ae4c">STAT_KEYS</a> = [&quot;hp&quot;, &quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;]</td></tr>
+<tr class="memitem:a67edcf80d726a9b72527d12268cddcda" id="r_a67edcf80d726a9b72527d12268cddcda"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> = len(<a class="el" href="#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)</td></tr>
+<tr class="memitem:a69fec565ee3cd99264caa56531cdb63a" id="r_a69fec565ee3cd99264caa56531cdb63a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a69fec565ee3cd99264caa56531cdb63a">GLOBAL_FEATS</a> = len(<a class="el" href="#aaea275a03688ee9b905b1d8eaf379bef">WEATHER_NAMES</a>) + len(<a class="el" href="#a03efd2d9dff866bfdf404f94e0fd7060">FIELD_NAMES</a>) + 1</td></tr>
+<tr class="memitem:ae9d131d0d5e63a7a73f6f1eab996a43d" id="r_ae9d131d0d5e63a7a73f6f1eab996a43d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae9d131d0d5e63a7a73f6f1eab996a43d">SIDE_FEATS</a> = len(<a class="el" href="#a7b4371b047cf70cbd1fb949dcab387fd">SIDE_NAMES</a>)</td></tr>
+<tr class="memitem:a3d6fe38b77999831f184527dd665d07c" id="r_a3d6fe38b77999831f184527dd665d07c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3d6fe38b77999831f184527dd665d07c">ACTIVE_FEATS</a> = 3 + len(<a class="el" href="#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + len(<a class="el" href="#a4d0a81478bad24d94d08f5a6fd0dba12">BOOST_KEYS</a>) + len(<a class="el" href="#abac91e92a1710c8ce7d213cefba7ae4c">STAT_KEYS</a>)</td></tr>
+<tr class="memitem:a16c4085f46ce0c8f94658ab3b9fe7690" id="r_a16c4085f46ce0c8f94658ab3b9fe7690"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a16c4085f46ce0c8f94658ab3b9fe7690">RESERVE_FEATS</a> = 2 + len(<a class="el" href="#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a></td></tr>
+<tr class="memitem:af19563339bf78d182ac5fdffb3ee90fe" id="r_af19563339bf78d182ac5fdffb3ee90fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> = 11</td></tr>
+<tr class="memitem:a3b21f686c737f9b170a0a25ee022e2d8" id="r_a3b21f686c737f9b170a0a25ee022e2d8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3b21f686c737f9b170a0a25ee022e2d8">MOVE_FEATS_SINGLES</a> = <a class="el" href="#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 1</td></tr>
+<tr class="memitem:a9a4fe45f27fddd35beb80d6095bd86b2" id="r_a9a4fe45f27fddd35beb80d6095bd86b2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a9a4fe45f27fddd35beb80d6095bd86b2">MOVE_FEATS_DOUBLES</a> = <a class="el" href="#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 2</td></tr>
+<tr class="memitem:ab7dd5591f3afd8af65d7d291c86e4502" id="r_ab7dd5591f3afd8af65d7d291c86e4502"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab7dd5591f3afd8af65d7d291c86e4502">SINGLES_BENCH</a> = 5</td></tr>
+<tr class="memitem:aaa21b399f3b727775b786103563f4ec8" id="r_aaa21b399f3b727775b786103563f4ec8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aaa21b399f3b727775b786103563f4ec8">DOUBLES_BENCH</a> = 4</td></tr>
+<tr class="memitem:a64ccbc636abcbb65bcf4045c5555b758" id="r_a64ccbc636abcbb65bcf4045c5555b758"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="#a64ccbc636abcbb65bcf4045c5555b758">SINGLES_OBS_SIZE</a></td></tr>
+<tr class="memitem:ab56564a076cbc6dc581705c0e88f20e8" id="r_ab56564a076cbc6dc581705c0e88f20e8"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="#ab56564a076cbc6dc581705c0e88f20e8">DOUBLES_OBS_SIZE</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><pre class="fragment">Construcción de observaciones detalladas para los entornos (estilo vgc-bench).
+
+La idea es dar al agente RL toda la información que tendría un jugador humano
+(efectividades, clima, campo, prioridades, estados, boosts, stats, side
+conditions, etc.) y dejar que la red aprenda sola qué hacer.
+
+Se exponen dos funciones:
+    build_singles_obs(battle) -&gt; np.ndarray (SINGLES_OBS_SIZE,)
+    build_doubles_obs(battle) -&gt; np.ndarray (DOUBLES_OBS_SIZE,)
+
+Diseño por bloques de tamaño FIJO (rellenando con ceros lo que no exista),
+de modo que la observación siempre tiene la misma longitud.
+</pre> </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ab1b28d753de18224352f60fff0a3250b" name="ab1b28d753de18224352f60fff0a3250b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b28d753de18224352f60fff0a3250b">&#9670;&#160;</a></span>_active_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _active_features </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Bloque de un Pokémon ACTIVO (propio o rival). Longitud = ACTIVE_FEATS.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00166">166</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00160">_base_stats()</a>, <a class="el" href="features_8py_source.html#l00154">_boosts()</a>, <a class="el" href="features_8py_source.html#l00147">_status_onehot()</a> y <a class="el" href="features_8py_source.html#l00138">_type_multihot()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00301">build_doubles_obs()</a> y <a class="el" href="features_8py_source.html#l00275">build_singles_obs()</a>.</p>
+
+</div>
+</div>
+<a id="a5d088280a8f20013edb453a404198659" name="a5d088280a8f20013edb453a404198659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d088280a8f20013edb453a404198659">&#9670;&#160;</a></span>_active_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> set[str] _active_names </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>container</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Nombres de los enums activos en un dict/set/enum/None (clima, campo...).</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00116">116</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00256">_global_features()</a> y <a class="el" href="features_8py_source.html#l00266">_side_features()</a>.</p>
+
+</div>
+</div>
+<a id="a1699c4f077578ab02aa1abd913304bb1" name="a1699c4f077578ab02aa1abd913304bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1699c4f077578ab02aa1abd913304bb1">&#9670;&#160;</a></span>_base_stats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _base_stats </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00160">160</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00166">_active_features()</a>.</p>
+
+</div>
+</div>
+<a id="a56d4470295aa11024da36eeac49097fa" name="a56d4470295aa11024da36eeac49097fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d4470295aa11024da36eeac49097fa">&#9670;&#160;</a></span>_boosts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _boosts </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00154">154</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00166">_active_features()</a>.</p>
+
+</div>
+</div>
+<a id="a6249ff8fc9de200aed9f47406e000330" name="a6249ff8fc9de200aed9f47406e000330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6249ff8fc9de200aed9f47406e000330">&#9670;&#160;</a></span>_coerce_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> float _coerce_float </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float </td>          <td class="paramname"><span class="paramname"><em>default</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00127">127</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00195">_move_features()</a>.</p>
+
+</div>
+</div>
+<a id="afac8edcdb002bd9243d0394d588ae59e" name="afac8edcdb002bd9243d0394d588ae59e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac8edcdb002bd9243d0394d588ae59e">&#9670;&#160;</a></span>_global_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _global_features </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>battle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00256">256</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00116">_active_names()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00301">build_doubles_obs()</a> y <a class="el" href="features_8py_source.html#l00275">build_singles_obs()</a>.</p>
+
+</div>
+</div>
+<a id="ad64f967d83db2f3c608834b44cc00f9f" name="ad64f967d83db2f3c608834b44cc00f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64f967d83db2f3c608834b44cc00f9f">&#9670;&#160;</a></span>_move_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _move_features </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>move</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>opponents</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Bloque de un movimiento + su efectividad contra cada rival de 'opponents'.
+Longitud = _MOVE_SCALARS + 3 (categoría) + N_TYPES + len(opponents).
+</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00195">195</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00127">_coerce_float()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00243">_moves_block()</a>.</p>
+
+</div>
+</div>
+<a id="a95d1e4b307b89b359cbf96d536794ac1" name="a95d1e4b307b89b359cbf96d536794ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d1e4b307b89b359cbf96d536794ac1">&#9670;&#160;</a></span>_moves_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _moves_block </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>active_mon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>opponents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>move_feat_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">4 movimientos del Pokémon activo (rellenando con ceros si faltan).</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00243">243</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00195">_move_features()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00301">build_doubles_obs()</a> y <a class="el" href="features_8py_source.html#l00275">build_singles_obs()</a>.</p>
+
+</div>
+</div>
+<a id="a18602ca202d21a7a11dd4f9a96118b40" name="a18602ca202d21a7a11dd4f9a96118b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18602ca202d21a7a11dd4f9a96118b40">&#9670;&#160;</a></span>_reserve_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _reserve_features </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Bloque de un Pokémon en el BANCO. Longitud = RESERVE_FEATS.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00182">182</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00147">_status_onehot()</a> y <a class="el" href="features_8py_source.html#l00138">_type_multihot()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00301">build_doubles_obs()</a> y <a class="el" href="features_8py_source.html#l00275">build_singles_obs()</a>.</p>
+
+</div>
+</div>
+<a id="a3bc04a4d50169875387a0307cfdfe76a" name="a3bc04a4d50169875387a0307cfdfe76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc04a4d50169875387a0307cfdfe76a">&#9670;&#160;</a></span>_side_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _side_features </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>conditions</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00266">266</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00116">_active_names()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00301">build_doubles_obs()</a> y <a class="el" href="features_8py_source.html#l00275">build_singles_obs()</a>.</p>
+
+</div>
+</div>
+<a id="ae0296ef476c245bb6450d12470ca8629" name="ae0296ef476c245bb6450d12470ca8629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0296ef476c245bb6450d12470ca8629">&#9670;&#160;</a></span>_status_onehot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _status_onehot </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00147">147</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00166">_active_features()</a> y <a class="el" href="features_8py_source.html#l00182">_reserve_features()</a>.</p>
+
+</div>
+</div>
+<a id="ac6b1aeba1c0bfbb91a9626fa7afc6f6c" name="ac6b1aeba1c0bfbb91a9626fa7afc6f6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6b1aeba1c0bfbb91a9626fa7afc6f6c">&#9670;&#160;</a></span>_type_multihot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[float] _type_multihot </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00138">138</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="features_8py_source.html#l00166">_active_features()</a> y <a class="el" href="features_8py_source.html#l00182">_reserve_features()</a>.</p>
+
+</div>
+</div>
+<a id="aa24aac4e784fc6e6004f9d410cda6c4e" name="aa24aac4e784fc6e6004f9d410cda6c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24aac4e784fc6e6004f9d410cda6c4e">&#9670;&#160;</a></span>build_doubles_obs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> npt.NDArray[np.float32] build_doubles_obs </td>
+          <td>(</td>
+          <td class="paramtype">DoubleBattle</td>          <td class="paramname"><span class="paramname"><em>battle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00301">301</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00166">_active_features()</a>, <a class="el" href="features_8py_source.html#l00256">_global_features()</a>, <a class="el" href="features_8py_source.html#l00243">_moves_block()</a>, <a class="el" href="features_8py_source.html#l00182">_reserve_features()</a> y <a class="el" href="features_8py_source.html#l00266">_side_features()</a>.</p>
+
+</div>
+</div>
+<a id="a8c3e7089435d7c555ea7ea116982e680" name="a8c3e7089435d7c555ea7ea116982e680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3e7089435d7c555ea7ea116982e680">&#9670;&#160;</a></span>build_singles_obs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> npt.NDArray[np.float32] build_singles_obs </td>
+          <td>(</td>
+          <td class="paramtype">Battle</td>          <td class="paramname"><span class="paramname"><em>battle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00275">275</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="features_8py_source.html#l00166">_active_features()</a>, <a class="el" href="features_8py_source.html#l00256">_global_features()</a>, <a class="el" href="features_8py_source.html#l00243">_moves_block()</a>, <a class="el" href="features_8py_source.html#l00182">_reserve_features()</a> y <a class="el" href="features_8py_source.html#l00266">_side_features()</a>.</p>
+
+</div>
+</div>
+<a id="ab0dd5151db47be8c17c4ce1daaa17994" name="ab0dd5151db47be8c17c4ce1daaa17994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0dd5151db47be8c17c4ce1daaa17994">&#9670;&#160;</a></span>doubles_token_segments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[tuple[str, int, int]] doubles_token_segments </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Layout de tokens de dobles. Coincide con build_doubles_obs.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00096">96</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="adf5eb877a93f3451be72fb6fe1ee881e" name="adf5eb877a93f3451be72fb6fe1ee881e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5eb877a93f3451be72fb6fe1ee881e">&#9670;&#160;</a></span>singles_token_segments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[tuple[str, int, int]] singles_token_segments </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Layout del vector plano de singles como secuencia de TOKENS (kind, inicio, len).
+DEBE coincidir con el orden en que build_singles_obs concatena los bloques.
+Lo usa el extractor transformer para trocear la observación en entidades.
+</pre> 
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00076">76</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="acd98d5ae8f343920200ad437e9dcc565" name="acd98d5ae8f343920200ad437e9dcc565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd98d5ae8f343920200ad437e9dcc565">&#9670;&#160;</a></span>_CHART</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.features._CHART = GenData.from_gen(9).type_chart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00028">28</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="af19563339bf78d182ac5fdffb3ee90fe" name="af19563339bf78d182ac5fdffb3ee90fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19563339bf78d182ac5fdffb3ee90fe">&#9670;&#160;</a></span>_MOVE_SCALARS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features._MOVE_SCALARS = 11</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00059">59</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a3d6fe38b77999831f184527dd665d07c" name="a3d6fe38b77999831f184527dd665d07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6fe38b77999831f184527dd665d07c">&#9670;&#160;</a></span>ACTIVE_FEATS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.ACTIVE_FEATS = 3 + len(<a class="el" href="#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + len(<a class="el" href="#a4d0a81478bad24d94d08f5a6fd0dba12">BOOST_KEYS</a>) + len(<a class="el" href="#abac91e92a1710c8ce7d213cefba7ae4c">STAT_KEYS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00057">57</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a4d0a81478bad24d94d08f5a6fd0dba12" name="a4d0a81478bad24d94d08f5a6fd0dba12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0a81478bad24d94d08f5a6fd0dba12">&#9670;&#160;</a></span>BOOST_KEYS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.BOOST_KEYS = [&quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;, &quot;accuracy&quot;, &quot;evasion&quot;]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00050">50</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="aaa21b399f3b727775b786103563f4ec8" name="aaa21b399f3b727775b786103563f4ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa21b399f3b727775b786103563f4ec8">&#9670;&#160;</a></span>DOUBLES_BENCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.DOUBLES_BENCH = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00064">64</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="ab56564a076cbc6dc581705c0e88f20e8" name="ab56564a076cbc6dc581705c0e88f20e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56564a076cbc6dc581705c0e88f20e8">&#9670;&#160;</a></span>DOUBLES_OBS_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple src.features.DOUBLES_OBS_SIZE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  (</div>
+<div class="line">    GLOBAL_FEATS + 2 * SIDE_FEATS + 4 * ACTIVE_FEATS</div>
+<div class="line">    + 2 * DOUBLES_BENCH * RESERVE_FEATS + 2 * 4 * MOVE_FEATS_DOUBLES</div>
+<div class="line">)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00070">70</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a03efd2d9dff866bfdf404f94e0fd7060" name="a03efd2d9dff866bfdf404f94e0fd7060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03efd2d9dff866bfdf404f94e0fd7060">&#9670;&#160;</a></span>FIELD_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.FIELD_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  [</div>
+<div class="line">    <span class="stringliteral">&quot;ELECTRIC_TERRAIN&quot;</span>, <span class="stringliteral">&quot;GRASSY_TERRAIN&quot;</span>, <span class="stringliteral">&quot;MISTY_TERRAIN&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;PSYCHIC_TERRAIN&quot;</span>, <span class="stringliteral">&quot;TRICK_ROOM&quot;</span>, <span class="stringliteral">&quot;GRAVITY&quot;</span>,</div>
+<div class="line">]</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00042">42</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a69fec565ee3cd99264caa56531cdb63a" name="a69fec565ee3cd99264caa56531cdb63a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69fec565ee3cd99264caa56531cdb63a">&#9670;&#160;</a></span>GLOBAL_FEATS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.GLOBAL_FEATS = len(<a class="el" href="#aaea275a03688ee9b905b1d8eaf379bef">WEATHER_NAMES</a>) + len(<a class="el" href="#a03efd2d9dff866bfdf404f94e0fd7060">FIELD_NAMES</a>) + 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00055">55</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a9a4fe45f27fddd35beb80d6095bd86b2" name="a9a4fe45f27fddd35beb80d6095bd86b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4fe45f27fddd35beb80d6095bd86b2">&#9670;&#160;</a></span>MOVE_FEATS_DOUBLES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.MOVE_FEATS_DOUBLES = <a class="el" href="#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00061">61</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a3b21f686c737f9b170a0a25ee022e2d8" name="a3b21f686c737f9b170a0a25ee022e2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b21f686c737f9b170a0a25ee022e2d8">&#9670;&#160;</a></span>MOVE_FEATS_SINGLES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.MOVE_FEATS_SINGLES = <a class="el" href="#af19563339bf78d182ac5fdffb3ee90fe">_MOVE_SCALARS</a> + 3 + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a> + 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00060">60</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a67edcf80d726a9b72527d12268cddcda" name="a67edcf80d726a9b72527d12268cddcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67edcf80d726a9b72527d12268cddcda">&#9670;&#160;</a></span>N_TYPES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.features.N_TYPES = len(<a class="el" href="#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00054">54</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a16c4085f46ce0c8f94658ab3b9fe7690" name="a16c4085f46ce0c8f94658ab3b9fe7690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c4085f46ce0c8f94658ab3b9fe7690">&#9670;&#160;</a></span>RESERVE_FEATS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.RESERVE_FEATS = 2 + len(<a class="el" href="#aa895f224114193637a52cbc180d23db3">STATUS_NAMES</a>) + <a class="el" href="#a67edcf80d726a9b72527d12268cddcda">N_TYPES</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00058">58</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="ae9d131d0d5e63a7a73f6f1eab996a43d" name="ae9d131d0d5e63a7a73f6f1eab996a43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d131d0d5e63a7a73f6f1eab996a43d">&#9670;&#160;</a></span>SIDE_FEATS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.features.SIDE_FEATS = len(<a class="el" href="#a7b4371b047cf70cbd1fb949dcab387fd">SIDE_NAMES</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00056">56</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a7b4371b047cf70cbd1fb949dcab387fd" name="a7b4371b047cf70cbd1fb949dcab387fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4371b047cf70cbd1fb949dcab387fd">&#9670;&#160;</a></span>SIDE_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.SIDE_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  [</div>
+<div class="line">    <span class="stringliteral">&quot;TAILWIND&quot;</span>, <span class="stringliteral">&quot;REFLECT&quot;</span>, <span class="stringliteral">&quot;LIGHT_SCREEN&quot;</span>, <span class="stringliteral">&quot;AURORA_VEIL&quot;</span>, <span class="stringliteral">&quot;SAFEGUARD&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;MIST&quot;</span>, <span class="stringliteral">&quot;STEALTH_ROCK&quot;</span>, <span class="stringliteral">&quot;SPIKES&quot;</span>, <span class="stringliteral">&quot;TOXIC_SPIKES&quot;</span>, <span class="stringliteral">&quot;STICKY_WEB&quot;</span>,</div>
+<div class="line">]</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00046">46</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="ab7dd5591f3afd8af65d7d291c86e4502" name="ab7dd5591f3afd8af65d7d291c86e4502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dd5591f3afd8af65d7d291c86e4502">&#9670;&#160;</a></span>SINGLES_BENCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.features.SINGLES_BENCH = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00063">63</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a64ccbc636abcbb65bcf4045c5555b758" name="a64ccbc636abcbb65bcf4045c5555b758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ccbc636abcbb65bcf4045c5555b758">&#9670;&#160;</a></span>SINGLES_OBS_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple src.features.SINGLES_OBS_SIZE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  (</div>
+<div class="line">    GLOBAL_FEATS + 2 * SIDE_FEATS + 2 * ACTIVE_FEATS</div>
+<div class="line">    + 2 * SINGLES_BENCH * RESERVE_FEATS + 4 * MOVE_FEATS_SINGLES</div>
+<div class="line">)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00066">66</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="abac91e92a1710c8ce7d213cefba7ae4c" name="abac91e92a1710c8ce7d213cefba7ae4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac91e92a1710c8ce7d213cefba7ae4c">&#9670;&#160;</a></span>STAT_KEYS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.STAT_KEYS = [&quot;hp&quot;, &quot;atk&quot;, &quot;def&quot;, &quot;spa&quot;, &quot;spd&quot;, &quot;spe&quot;]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00051">51</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="aa895f224114193637a52cbc180d23db3" name="aa895f224114193637a52cbc180d23db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa895f224114193637a52cbc180d23db3">&#9670;&#160;</a></span>STATUS_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.STATUS_NAMES = [&quot;BRN&quot;, &quot;FRZ&quot;, &quot;PAR&quot;, &quot;PSN&quot;, &quot;SLP&quot;, &quot;TOX&quot;]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00037">37</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a5180fa27bcb992c3689b52b004715b84" name="a5180fa27bcb992c3689b52b004715b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5180fa27bcb992c3689b52b004715b84">&#9670;&#160;</a></span>TYPE_IDX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict src.features.TYPE_IDX = {n: i for i, n in enumerate(<a class="el" href="#a8829053a8ddcbdc923f69317711c6a56">TYPE_NAMES</a>)}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00036">36</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="a8829053a8ddcbdc923f69317711c6a56" name="a8829053a8ddcbdc923f69317711c6a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8829053a8ddcbdc923f69317711c6a56">&#9670;&#160;</a></span>TYPE_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.TYPE_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  [</div>
+<div class="line">    <span class="stringliteral">&quot;NORMAL&quot;</span>, <span class="stringliteral">&quot;FIRE&quot;</span>, <span class="stringliteral">&quot;WATER&quot;</span>, <span class="stringliteral">&quot;ELECTRIC&quot;</span>, <span class="stringliteral">&quot;GRASS&quot;</span>, <span class="stringliteral">&quot;ICE&quot;</span>, <span class="stringliteral">&quot;FIGHTING&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;POISON&quot;</span>, <span class="stringliteral">&quot;GROUND&quot;</span>, <span class="stringliteral">&quot;FLYING&quot;</span>, <span class="stringliteral">&quot;PSYCHIC&quot;</span>, <span class="stringliteral">&quot;BUG&quot;</span>, <span class="stringliteral">&quot;ROCK&quot;</span>, <span class="stringliteral">&quot;GHOST&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;DRAGON&quot;</span>, <span class="stringliteral">&quot;DARK&quot;</span>, <span class="stringliteral">&quot;STEEL&quot;</span>, <span class="stringliteral">&quot;FAIRY&quot;</span>,</div>
+<div class="line">]</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00031">31</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+<a id="aaea275a03688ee9b905b1d8eaf379bef" name="aaea275a03688ee9b905b1d8eaf379bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea275a03688ee9b905b1d8eaf379bef">&#9670;&#160;</a></span>WEATHER_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list src.features.WEATHER_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=  [</div>
+<div class="line">    <span class="stringliteral">&quot;DESOLATELAND&quot;</span>, <span class="stringliteral">&quot;DELTASTREAM&quot;</span>, <span class="stringliteral">&quot;HAIL&quot;</span>, <span class="stringliteral">&quot;PRIMORDIALSEA&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;RAINDANCE&quot;</span>, <span class="stringliteral">&quot;SANDSTORM&quot;</span>, <span class="stringliteral">&quot;SNOWSCAPE&quot;</span>, <span class="stringliteral">&quot;SUNNYDAY&quot;</span>,</div>
+<div class="line">]</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="features_8py_source.html#l00038">38</a> del archivo <a class="el" href="features_8py_source.html">features.py</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacesrc.html">src</a></li><li class="navelem"><a href="namespacesrc_1_1features.html">features</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

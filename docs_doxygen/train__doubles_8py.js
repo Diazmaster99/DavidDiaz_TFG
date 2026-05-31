@@ -1,0 +1,27 @@
+var train__doubles_8py =
+[
+    [ "train_doubles.check_server", "namespacetrain__doubles.html#a67f603078cfab4c7af4606532a4dd6ec", null ],
+    [ "train_doubles.checkpoint_steps", "namespacetrain__doubles.html#ad3b5b382e0281b247dfbb8eb4d441a34", null ],
+    [ "train_doubles.load_team", "namespacetrain__doubles.html#aebe2d69c02c02cf1ed1df73f040e465b", null ],
+    [ "train_doubles.set_seed", "namespacetrain__doubles.html#af71a153c070610905471c8a4103cd6c3", null ],
+    [ "train_doubles.train", "namespacetrain__doubles.html#ac9809c3fb2446877ab436a82dbad4c56", null ],
+    [ "train_doubles.args", "namespacetrain__doubles.html#a0b3ed5901806b28bbdcc39883fcb8d54", null ],
+    [ "train_doubles.battle_format", "namespacetrain__doubles.html#a0146d76b7cdffe0a550c1eb00088aefc", null ],
+    [ "train_doubles.choices", "namespacetrain__doubles.html#ad0da3dfcc9a666d92ec1b80032069b95", null ],
+    [ "train_doubles.default", "namespacetrain__doubles.html#a8d8193c0cf771ba69f3ef6a02c18c056", null ],
+    [ "train_doubles.dest", "namespacetrain__doubles.html#ae06483310e73dd24d716720f0ab71e2e", null ],
+    [ "train_doubles.device", "namespacetrain__doubles.html#a35ddc36b8332930b3eb89d5ccdda6bc0", null ],
+    [ "train_doubles.help", "namespacetrain__doubles.html#a432db8b8e173d8a49ebac006228f4c65", null ],
+    [ "train_doubles.int", "namespacetrain__doubles.html#a66b213d71b86d3481a5f6c665a79ce93", null ],
+    [ "train_doubles.opponent_type", "namespacetrain__doubles.html#acf64dc8e97a8c48e9ce209f2fb48ec5c", null ],
+    [ "train_doubles.parser", "namespacetrain__doubles.html#a6f5a096a0b61fcf044f480c83373a8f6", null ],
+    [ "train_doubles.policy", "namespacetrain__doubles.html#aee21389a74f67d169e23a4f201c60610", null ],
+    [ "train_doubles.port", "namespacetrain__doubles.html#a6e78629c126094596c8ff9a99fa9bb4d", null ],
+    [ "train_doubles.run_id", "namespacetrain__doubles.html#a701d747db0045513443d08bf92674b60", null ],
+    [ "train_doubles.save_interval", "namespacetrain__doubles.html#a74e1da0c021318be27277be44d73571d", null ],
+    [ "train_doubles.str", "namespacetrain__doubles.html#adb2c5b2e6713e522ea97971c5f7c04d6", null ],
+    [ "train_doubles.tag", "namespacetrain__doubles.html#a26adc6271d1994f9f974e209afa0a9d2", null ],
+    [ "train_doubles.team_path", "namespacetrain__doubles.html#ae25deff177a44c2a50b95c1b8f071227", null ],
+    [ "train_doubles.total_steps", "namespacetrain__doubles.html#ab081992ff345c6279cc353ae1d554eff", null ],
+    [ "train_doubles.type", "namespacetrain__doubles.html#ae5bfbc94758900a3ac7845a78d09837a", null ]
+];

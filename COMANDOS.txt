@@ -1,0 +1,374 @@
+===========================================================================
+  DavidDiaz_TFG - COMANDOS
+  Bots de Pokémon (singles y dobles VGC) con Aprendizaje por Refuerzo (PPO)
+===========================================================================
+
+PRIMERA VEZ / INSTALACIÓN DESDE CERO (otro PC sin nada instalado):
+  sigue la guía paso a paso de  INSTALACIÓN.txt  (Python, Node.js, Git, el
+  entorno virtual y el servidor). Este fichero (COMANDOS.txt) es para el día
+  a día, una vez ya está todo instalado.
+
+Orden típico de uso:
+  1) Activar el entorno virtual
+  2) Encender el servidor Showdown (en OTRA terminal)
+  3) Entrenar  ->  Jugar  ->  Ver progreso en TensorBoard
+
+
+---------------------------------------------------------------------------
+ 1. ENTORNO VIRTUAL (.venv)
+---------------------------------------------------------------------------
+
+# Activar (Windows) - hazlo SIEMPRE antes de ejecutar los scripts.
+# Verás "(.venv)" al principio del prompt.
+    .venv\Scripts\activate
+
+# Desactivar
+    deactivate
+
+# Reinstalar dependencias (en otro PC o tras borrar .venv)
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+
+# Clonar el entorno EXACTO (mismas versiones verificadas)
+    pip install -r requirements.lock
+
+
+---------------------------------------------------------------------------
+ 2. SERVIDOR POKEMON SHOWDOWN (local) -- usar el FORK de vgc-bench
+---------------------------------------------------------------------------
+
+# IMPORTANTE: usa el servidor FORKEADO (está en pokemon-showdown/ dentro del
+# proyecto). El fork arregla bugs del servidor estándar (gestión de salas,
+# timeouts de salas inactivas, un crash) que causaban CUELGUES en combates
+# largos de dobles. Es lo que usa vgc-bench. NO se conecta nada al .venv (el servidor es Node.js, aparte).
+
+# Arrancar el servidor (en una terminal aparte, déjalo abierto):
+    cd pokemon-showdown
+    node pokemon-showdown start --no-security
+
+# Espera a ver:  "Worker 1 now listening on 0.0.0.0:8000"
+# Abrir el cliente web:  http://localhost:8000
+# Con --no-security NO hace falta login.
+
+# Solo puede haber un servidor en el puerto 8000. Si ves el error
+# "bind EADDRINUSE 0.0.0.0:8000", es que ya tienes otro servidor corriendo;
+# cierralo (Ctrl+C en su terminal) antes de arrancar este.
+
+# Si la carpeta pokemon-showdown/ no existiera (otro PC), reinstálala:
+#     git clone -b vgc-bench https://github.com/cameronangliss/pokemon-showdown.git
+#     cd pokemon-showdown
+#     npm i
+
+# FORMATOS VGC: el fork no trae los VGC 2026 más recientes (p.ej. Reg F, Reg I
+# Bo3). Para añadir al fork todos los formatos VGC del repo OFICIAL que le
+# falten (sin tocar los arreglos de estabilidad), usa el patch:
+#     python patch_server_formats.py --dry-run     # ver que añadiría
+#     python patch_server_formats.py               # añadirlos
+#     cd pokemon-showdown && node build             # recompilar
+#     node pokemon-showdown start --no-security     # reiniciar
+# (Tras un clon limpio del servidor, hay que volver a ejecutar este patch.)
+
+
+---------------------------------------------------------------------------
+ 3. ENTRENAR - SINGLES
+---------------------------------------------------------------------------
+
+# Entrenamiento básico (gen9randombattle, rival aleatorio, 200k pasos)
+    python train_singles.py
+
+# Contra rival heurístico
+    python train_singles.py --opponent heuristic
+
+# Contra MaxBasePower (siempre el movimiento de mayor potencia base)
+    python train_singles.py --opponent maxpower
+
+# Más pasos / opciones
+    python train_singles.py --total_steps 500000 --run_id 1 --port 8000
+
+# RECOMENDADO: la observación es detallada (~507 features) -> necesita MUCHOS pasos.
+# Entrena largo y contra heurístico para que aprenda bien.
+    python train_singles.py --opponent heuristic --total_steps 500000
+
+# Arquitectura de red (--policy): mlp (por defecto) o transformer (atención).
+    python train_singles.py --policy transformer --opponent heuristic --total_steps 500000
+
+# SELF-PLAY (--opponent self): el rival usa la política ACTUAL del agente.
+    python train_singles.py --opponent self --total_steps 1000000
+
+# En GPU (mucho más rápido): añade  --device cuda:0
+# Reanuda solo: si subes --total_steps vuelve a lanzar el mismo comando.
+
+# Modelos ->  models/singles/<formato>/<policy>/seed<run_id>/
+# Logs    ->  logs/singles/<formato>/<policy>/
+
+
+---------------------------------------------------------------------------
+ 4. ENTRENAR - DOBLES VGC
+---------------------------------------------------------------------------
+
+# Dobles aleatorio (SIN equipo, lo más fácil para probar)
+    python train_doubles.py
+
+# VGC con un equipo fijo
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi
+
+# VGC con equipos VARIADOS (pasa una CARPETA: un equipo aleatorio por combate)
+    python train_doubles.py --team teams/vgc --format gen9vgc2026regi
+
+# Contra rival heurístico
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --opponent heuristic
+
+# Contra MaxBasePower (siempre el movimiento de mayor potencia base)
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --opponent maxpower
+
+# SEGUIR entrenando un modelo ya existente (sube --total_steps; reanuda solo)
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --total_steps 400000
+
+# Modelos ->  models/doubles/<formato>/<policy>/seed<run_id>/
+# Logs    ->  logs/doubles/<formato>/<policy>/
+
+# RECOMENDADO (observación detallada ~675 features -> entrena largo + heurístico):
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --opponent heuristic --total_steps 500000
+
+# Arquitectura de red (--policy): mlp (por defecto) o transformer (atención).
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --policy transformer --opponent heuristic --total_steps 500000
+
+# SELF-PLAY (--opponent self): el rival usa la política ACTUAL del agente.
+    python train_doubles.py --team teams/vgc/I1.txt --format gen9vgc2026regi --opponent self --total_steps 1000000
+
+# En GPU: añade  --device cuda:0
+
+# Ejemplos de formatos VGC válidos en el servidor:
+#   gen9vgc2026regi      (VGC 2026 Reg I)
+#   gen9vgc2024regg      (VGC 2024 Reg G)
+#   gen9randomdoublesbattle   (dobles aleatorio, sin equipo)
+
+
+---------------------------------------------------------------------------
+ 4b. SELF-PLAY A PARTIR DE UN MODELO YA ENTRENADO (recomendado)
+---------------------------------------------------------------------------
+
+# El self-play funciona mejor si se parte de un modelo ya competente
+# (entrenado antes vs random/heurístico) que si empieza desde cero, sobre todo
+# con poco computo (CPU).
+
+# Opción A - utilidad selfplay_from.py (lo hace todo):
+# copia el último checkpoint de un modelo ya entrenado a un seed NUEVO marcado
+# con un sufijo (por defecto "selfplay"), SIN tocar el original, y lanza allí el
+# self-play. Así no se mezclan los modelos y la carpeta + el run de TensorBoard
+# quedan diferenciados:
+#     models/doubles/<formato>/mlp/seed1            (origen, p.ej. vs heurístico)
+#     models/doubles/<formato>/mlp/seed1_selfplay   (nuevo, self-play)
+#
+    python selfplay_from.py --mode doubles --format gen9vgc2026regi --policy mlp --src_seed 2 --team teams/vgc/reg_i --total_steps 1500000
+
+# Solo copiar y mostrar el comando (sin entrenar):
+    python selfplay_from.py --mode doubles --src_seed 1 --no-launch
+
+# Singles (sin --team):
+    python selfplay_from.py --mode singles --policy mlp --src_seed 1 --total_steps 1000000
+
+# --total_steps debe ser mayor que los pasos del checkpoint de origen.
+# Otras opciones: --dst_seed N (seed destino), --tag <texto> (sufijo, def. selfplay).
+
+# Opción B - manual con --tag (mismo efecto, paso a paso):
+#   1) Entrena el modelo base:
+    python train_doubles.py --team teams/vgc/reg_i --format gen9vgc2026regi --opponent heuristic --total_steps 1000000
+#   2) Copia su checkpoint a la carpeta nueva (PowerShell):
+    mkdir models\doubles\gen9vgc2026regi\mlp\seed1_selfplay
+    copy models\doubles\gen9vgc2026regi\mlp\seed1\model_1000000_steps.zip models\doubles\gen9vgc2026regi\mlp\seed1_selfplay\
+#   3) Lanza el self-play en esa carpeta (el --tag la diferencia):
+    python train_doubles.py --team teams/vgc/reg_i --format gen9vgc2026regi --opponent self --tag selfplay --total_steps 1500000
+
+
+---------------------------------------------------------------------------
+ 5. JUGAR / PROBAR EL BOT (play.py)
+---------------------------------------------------------------------------
+
+# IMPORTANTE: usa el mismo --format y --policy con los que entrenaste el modelo.
+# El bot ACEPTA desafíos; luego lo retas desde el navegador (localhost:8000).
+# (Si entrenas con --policy transformer, juegas también con --policy transformer.)
+
+# Singles (acepta desafíos en el servidor local)
+    python play.py --mode singles --username MiBot --run_id 1
+
+# Dobles VGC con el equipo I1
+    python play.py --mode doubles --username MiBot --run_id 1 --team teams/vgc/I1.txt --format gen9vgc2026regi
+
+# Dobles con equipos variados (carpeta)
+    python play.py --mode doubles --username MiBot --run_id 1 --team teams/vgc/reg_ --format gen9vgc2026regi
+
+# Número de partidas a aceptar (-n)
+    python play.py --mode doubles --username MiBot --run_id 1 --team teams/vgc/I1.txt --format gen9vgc2026regi -n 10
+
+# Pasos para retarlo:
+#   1) Arranca el servidor (sección 2)
+#   2) Lanza play.py (queda esperando desafíos)
+#   3) Abre http://localhost:8000, elige el formato y desafía a "MiBot"
+
+# Open Team Sheets (ver equipos completos al inicio; solo si el formato lo permite)
+    python play.py --mode doubles --username MiBot --run_id 1 --team teams/vgc/reg_i --format gen9vgc2026regi --ots
+
+# Jugar en LADDER (partidas con clasificación en vez de aceptar desafíos)
+    python play.py --mode singles --username MiBot --run_id 1 -l -n 10
+
+# Servidor OFICIAL (play.pokemonshowdown.com) - requiere cuenta registrada
+    python play.py --mode singles --username MiNombreRegistrado --password MiClave --official --ladder
+
+# COMBATES SIMULTÁNEOS (--max-concurrent N): el bot acepta varios desafíos en
+# paralelo desde la misma cuenta. Por defecto N=1 (uno a la vez). Útil si varias
+# personas le retan a la vez y quieres que jueguen sin esperar turno.
+    python play.py --mode doubles --username TFG_RL_BOT --password XXX --official --team teams/vgc/reg_i --format gen9vgc2026regi -n 15 --max-concurrent 3
+# (acepta hasta 15 desafíos en total y mantiene hasta 3 combates a la vez)
+
+
+---------------------------------------------------------------------------
+ 5b. ENFRENTAR DOS AGENTES (battle_models.py)
+---------------------------------------------------------------------------
+
+# Necesita el servidor local encendido. Combaten N veces y reporta el winrate.
+# Cada lado (--a y --b) puede ser:
+#     MODELO entrenado:  mlp | transformer
+#     BASELINE poke-env: random | maxpower | heuristic
+# (Los baselines NO necesitan modelo entrenado; sirven para evaluar el bot.)
+
+# MLP vs el heurístico de poke-env (dobles VGC, 50 combates)
+    python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/I1.txt --a mlp --b heuristic -n 50
+
+# MLP vs RandomPlayer / vs MaxBasePower
+    python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/I1.txt --a mlp --b random -n 50
+    python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/I1.txt --a mlp --b maxpower -n 50
+
+# MLP vs Transformer
+    python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/I1.txt --a mlp --b transformer -n 50
+
+# Singles: transformer vs MaxDamage
+    python battle_models.py --mode singles --a transformer --b maxpower -n 50
+
+# Dos seeds del mismo tipo (--run_id_a / --run_id_b solo aplican a modelos RL)
+    python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/I1.txt --a mlp --b mlp --run_id_a 1 --run_id_b 2 -n 50
+
+# MLP SelfPlay seed 1 vs Transformer seed 5
+python battle_models.py --mode doubles --format gen9vgc2026regi --team teams/vgc/reg_i --a mlp --b transformer --run_id_a 1 --run_id_b 5 --tag_a selfplay -n 500
+---------------------------------------------------------------------------
+ 6. PROBAR QUE EL ENTORNO FUNCIONA (test_env.py)
+---------------------------------------------------------------------------
+
+# Test rápido de singles (necesita el servidor encendido)
+    python test_env.py
+
+# Test de dobles (necesita un equipo)
+    python test_env.py --doubles --team teams/vgc/I1.txt
+
+
+---------------------------------------------------------------------------
+ 7. VER EL PROGRESO DEL ENTRENAMIENTO (TensorBoard)
+---------------------------------------------------------------------------
+
+# Lanzar TensorBoard apuntando a la carpeta de logs
+    tensorboard --logdir logs
+
+# Luego abre en el navegador la URL que muestra (normalmente):
+    http://localhost:6006
+
+# Métricas útiles: rollout/ep_rew_mean (recompensa media),
+# eval/win_rate (tasa de victorias) si está disponible.
+
+# Lanza TensorBoard desde la carpeta del proyecto (DavidDiaz_TFG por ejemplo), o pasa
+# la ruta completa, o mirará en la carpeta equivocada y dirá "No dashboards".
+#     tensorboard --logdir C:\Users\diazm\DavidDiaz_TFG\logs
+
+# Generar las gráficas (PNG) de las métricas para la memoria -> carpeta metrics/
+# (lee los event files directamente; NO hay que exportar nada a mano):
+    python plot_metrics.py
+# Acotar a un subconjunto (figura más limpia, p.ej. comparar mlp vs transformer):
+    python plot_metrics.py --logdir logs/doubles/gen9vgc2026regi --outdir metrics/doubles
+
+
+---------------------------------------------------------------------------
+ 8. GIT (opcional)
+---------------------------------------------------------------------------
+
+    git init
+    git add .
+    git status                 # comprueba que .venv y logs NO aparecen
+    git commit -m "Mensaje"
+
+
+---------------------------------------------------------------------------
+ 9. LIMPIAR / REENTRENAR (tras cambiar la observación o la política)
+---------------------------------------------------------------------------
+
+# Si se cambia el embedding (tamaño de observación) o se cambia a MaskablePPO,
+# los modelos viejos quedan INCOMPATIBLES. Bórralos y reentrena:
+    rmdir /s /q models\doubles
+    rmdir /s /q models\singles
+
+# (La reanudación detecta modelos incompatibles y empieza de cero igualmente,
+#  pero borrarlos evita warnings y confusión.)
+
+
+---------------------------------------------------------------------------
+ 10. CARACTERÍSTICAS DEL BOT (notas)
+---------------------------------------------------------------------------
+
+# - Algoritmo: PPO con ACTION MASKING (MaskablePPO de sb3-contrib).
+#   El bot NUNCA elige acciones ilegales (no malgasta turnos en jugadas random).
+#
+# - Arquitectura de red (--policy), para comparar en la memoria:
+#     mlp         = MLP plano [256,256] (por defecto). Sencillo y solido.
+#     transformer = extractor con ATENCION sobre tokens (1 ficha por Pokémon /
+#                   movimiento / global), estilo vgc-bench. Generaliza mejor.
+#   Los modelos se guardan separados por política:
+#     models/<modo>/<formato>/<policy>/seed<run_id>/
+#   Para jugar, usa el mismo --policy con el que entrenaste.
+#
+# - Observación detallada (src/features.py), lo que ve el bot cada turno:
+#     * Por movimiento: potencia, precisión, prioridad, crit, drain, recoil,
+#       force-switch, self-switch, self-destruct, PP%, hits, categoría, tipo,
+#       y EFECTIVIDAD vs cada rival.
+#     * Por Pokémon (activos y banco): HP, debilitado, terastalizado, estado,
+#       tipos, boosts (7 stats), stats base.
+#     * Por bando: Tailwind, pantallas, Safeguard, Mist, hazards.
+#     * Global: clima, terrenos/Trick Room/Gravedad, turno.
+#   Tamaños: singles 507 features, dobles 675 features.
+#
+# - Red neuronal: MLP [256, 256].
+#
+# - Oponente de entrenamiento (--opponent):
+#     random    = juega aleatorio legal (baseline rápido)
+#     maxpower  = MaxBasePowerPlayer (siempre el movimiento de mayor potencia base)
+#     heuristic = SimpleHeuristicsPlayer (rival con reglas, mejor aprendizaje)
+#     self      = SELF-PLAY: el rival usa la política actual del agente
+#                 (mejora a la vez que el agente; usa muchos pasos, p.ej. 1M)
+#
+# - Combates entre agentes: battle_models.py (ver sección 5b).
+#   Enfrenta cualquier par de: mlp, transformer, random, maxpower, heuristic.
+#   Útil para medir winrate del bot vs baselines o vs otras arquitecturas.
+#
+# - Depuración: si un entrenamiento falla y se quiere ver el error real (sin que
+#   el watchdog y los reintentos lo oculten), activa el modo debug antes de
+#   entrenar y vuelve a lanzar el comando:
+#       PowerShell:  $env:POKE_ENV_DEBUG = "1"
+#       cmd:         set POKE_ENV_DEBUG=1
+#   Desactívalo ("0") para volver a la robustez normal en los entrenamientos largos.
+
+
+---------------------------------------------------------------------------
+ ARGUMENTOS COMUNES (resumen)
+---------------------------------------------------------------------------
+  --format <id>        Formato de batalla (debe coincidir entrenar/jugar)
+  --team <fichero|dir> Equipo fijo (.txt) o carpeta (aleatorio por combate)
+  --run_id <n>         ID/semilla del experimento (default 1)
+  --total_steps <n>    Pasos totales de entrenamiento (acumulado)
+  --opponent <tipo>    random (default), maxpower, heuristic o self (self-play)
+  --policy <tipo>      mlp (default) o transformer (atención estilo vgc-bench)
+  --tag <texto>        sufijo para diferenciar modelo/run (p.ej. selfplay)
+  --device <disp>      cpu (default) o cuda:0
+  --port <n>           Puerto del servidor (default 8000)
+  -n <n>               (play) número de partidas
+  -l / --ladder        (play) jugar en la ladder
+  --ots                (play, dobles) aceptar Open Team Sheets
+  --official           (play) conectar al servidor oficial
+===========================================================================

@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Archivo de código fuente src/rl_wrapper.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('rl__wrapper_8py_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rl_wrapper.py</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rl__wrapper_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacesrc_1_1rl__wrapper.html">    1</a></span><span class="comment"># -----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"># Autor: David Díaz Espinosa de los Monteros</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"># TFG - Bot de combates Pokémon VGC con aprendizaje por refuerzo (PPO)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"># -----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">Wrapper Gymnasium que controla a un agente con RL y al oponente, con</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral">RECUPERACIÓN ROBUSTA ante los cuelgues conocidos de poke-env + servidor local.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="stringliteral">Doble función:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral">  1) Convierte el PokeEnv (PettingZoo, 2 agentes) en un entorno Gymnasium de un</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="stringliteral">     solo agente. agent1 = política RL; agent2 = oponente (aleatorio válido,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">     heurístico, o self-play con una política).</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">  2) Hace el entrenamiento RESILIENTE:</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">       - watchdog en step(): si un turno se queda colgado (desincronización</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">         poke-env/servidor en dobles), lo abandona en &#39;step_timeout&#39; segundos</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">         en vez de esperar minutos al temporizador del servidor.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">       - reconstrucción del entorno: si reset() o un turno fallan, se cierra la</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">         conexión rota y se crea un PokeEnv NUEVO (agentes/websocket limpios),</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">         que es lo único que recupera de un estado de conexión corrupto.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">NOTA: el oponente se muestrea de la máscara de acciones (no se usa el</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral">SingleAgentWrapper de poke-env, que tiene un bug en order_to_action de dobles).</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">from</span> __future__ <span class="keyword">import</span> annotations</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">import</span> os</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">import</span> random</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">import</span> time</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">import</span> traceback</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> TimeoutError <span class="keyword">as</span> FuturesTimeoutError</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">from</span> gymnasium <span class="keyword">import</span> Env, spaces</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"># MODO DEBUG: ponlo a 1 para DESACTIVAR el watchdog y los reintentos/reconstrucción</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"># y ver el TRACEBACK REAL del error (en vez de tragarselo). Uso:</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">#   Windows (PowerShell):  $env:POKE_ENV_DEBUG = &quot;1&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">#   Windows (cmd):         set POKE_ENV_DEBUG=1</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">#   Linux/Mac:             export POKE_ENV_DEBUG=1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"># Dejalo SIN definir (o a 0) para entrenamientos normales (robustez activada).</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacesrc_1_1rl__wrapper.html#a98a6e15eee3eeb589bad702fc8830119">   43</a></span>DEBUG = os.environ.get(<span class="stringliteral">&quot;POKE_ENV_DEBUG&quot;</span>, <span class="stringliteral">&quot;&quot;</span>) <span class="keywordflow">not</span> <span class="keywordflow">in</span> (<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;0&quot;</span>, <span class="stringliteral">&quot;false&quot;</span>, <span class="stringliteral">&quot;False&quot;</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"># Parche de poke-env para los movimientos que cambian de id al cambiar de forma</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"># (Zacian/Zamazenta-Coronado: Behemoth Blade/Bash). Arregla la conversión</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"># orden&lt;-&gt;acción en AMBOS sentidos (agente y oponente). Se aplica al importarlo.</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">from</span> src <span class="keyword">import</span> poke_env_patch  <span class="comment"># noqa: E402,F401</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="" data-end="">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html">   51</a></span><span class="keyword">class </span><a class="code hl_class" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html">OpponentSamplingEnv</a>(Env):</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6b482af728866782f1f194e399e0c40f">   52</a></span>    metadata = {<span class="stringliteral">&quot;render_modes&quot;</span>: []}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="" data-end="">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ad6999446dec58e05a6ccda4b7eabb021">   54</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ad6999446dec58e05a6ccda4b7eabb021">__init__</a>(self, env_factory, opponent=None, step_timeout: float = 30.0):</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="stringliteral">        :param env_factory: callable SIN argumentos que crea un PokeEnv listo</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="stringliteral">            (ya configurado, con sus filtros de log). Se usa para crear el</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="stringliteral">            entorno y para RECONSTRUIRLO si la conexión se rompe.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="stringliteral">        :param opponent: Player opcional (p.ej. SimpleHeuristicsPlayer) para</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="stringliteral">            decidir las jugadas del rival. None -&gt; aleatorio válido (o self-play</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="stringliteral">            si se asigna un modelo con set_opponent_model()).</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="stringliteral">        :param step_timeout: segundos máximos para un turno antes de considerar</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="stringliteral">            el combate atascado y reconstruir el entorno.</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6dfb18c04118987ce3227ce7e667b82f">   65</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6dfb18c04118987ce3227ce7e667b82f">_factory</a> = env_factory</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">   66</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a> = env_factory()</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">   67</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a> = opponent</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">   68</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">_opponent_model</a> = <span class="keywordtype">None</span>        <span class="comment"># SELF-PLAY si se asigna</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a769720bdd679f747d6bc4c4cdbbc99a5">   69</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a769720bdd679f747d6bc4c4cdbbc99a5">_step_timeout</a> = step_timeout</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">   70</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">_executor</a> = ThreadPoolExecutor(max_workers=1)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        a1 = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.agent1.username</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ae631a77f06d38b3820adaae2e0a7bfa7">   73</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ae631a77f06d38b3820adaae2e0a7bfa7">observation_space</a> = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.observation_spaces[a1][<span class="stringliteral">&quot;observation&quot;</span>]</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">   74</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">action_space</a> = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.action_spaces[a1]</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">   75</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">_is_doubles</a> = isinstance(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">action_space</a>, spaces.MultiDiscrete)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">_is_doubles</a>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">   77</a></span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a> = int(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">action_space</a>.nvec.sum())   <span class="comment"># 214</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a> = int(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">action_space</a>.n)            <span class="comment"># 26</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">   80</a></span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = np.ones(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>, dtype=bool)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment"># ------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="preprocessor">@property</span></div>
+<div class="foldopen" id="foldopen00085" data-start="" data-end="">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8fbcb7279abc66d2add380fe9ab59f36">   85</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8fbcb7279abc66d2add380fe9ab59f36">poke_env</a>(self):</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+</div>
+<div class="foldopen" id="foldopen00088" data-start="" data-end="">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a7534fe2b34034a6e0c596e74119a49c4">   88</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a7534fe2b34034a6e0c596e74119a49c4">set_opponent_model</a>(self, model):</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="stringliteral">&quot;&quot;&quot;Activa SELF-PLAY: el rival juega con la política de &#39;model&#39;.&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">_opponent_model</a> = model</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment"># ------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment"># Recuperación</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="" data-end="">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a20d8ad1a9a658344d4d09fe207e9c4ec">   95</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a20d8ad1a9a658344d4d09fe207e9c4ec">_force_finish_battles</a>(self):</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="stringliteral">&quot;&quot;&quot;Marca como terminadas las batallas colgadas en los 2 agentes.&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        pe = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">for</span> agent <span class="keywordflow">in</span> (getattr(pe, <span class="stringliteral">&quot;agent1&quot;</span>, <span class="keywordtype">None</span>), getattr(pe, <span class="stringliteral">&quot;agent2&quot;</span>, <span class="keywordtype">None</span>)):</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> agent <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keywordflow">for</span> b <span class="keywordflow">in</span> list(agent._battles.values()):</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> b.finished:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                        b._finished = <span class="keyword">True</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordflow">pass</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        pe.battle1 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        pe.battle2 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+</div>
+<div class="foldopen" id="foldopen00110" data-start="" data-end="">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a99a026905019c4cd0ceb4e2fa53dc74a">  110</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a99a026905019c4cd0ceb4e2fa53dc74a">_finish_lingering_battles</a>(self):</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="stringliteral">&quot;&quot;&quot;Marca como terminadas las batallas locales que hayan quedado sin</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="stringliteral">        cerrar (p.ej. tras un turno abortado, o un final no detectado en uno de</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="stringliteral">        los dos bandos en dobles). Así poke-env puede reiniciar sin lanzar</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="stringliteral">        &#39;Can not reset player&#39;s battles while they are still running&#39;, evitando</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="stringliteral">        la costosa reconstrucción del entorno. No anula battle1/battle2: poke-env</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="stringliteral">        los reasigna en su propio reset().&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        pe = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">for</span> agent <span class="keywordflow">in</span> (getattr(pe, <span class="stringliteral">&quot;agent1&quot;</span>, <span class="keywordtype">None</span>), getattr(pe, <span class="stringliteral">&quot;agent2&quot;</span>, <span class="keywordtype">None</span>)):</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> agent <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordflow">for</span> b <span class="keywordflow">in</span> list(agent._battles.values()):</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> b.finished:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                        b._finished = <span class="keyword">True</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keywordflow">pass</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+</div>
+<div class="foldopen" id="foldopen00128" data-start="" data-end="">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">  128</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">_rebuild</a>(self):</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="stringliteral">&quot;&quot;&quot;Cierra el entorno roto y crea uno NUEVO (conexión/agentes limpios).&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a20d8ad1a9a658344d4d09fe207e9c4ec">_force_finish_battles</a>()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="comment"># IMPORTANTE: wait=False. El close() de poke-env, con su valor por</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="comment"># defecto wait=True, hace self._challenge_task.result() SIN timeout;</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="comment"># si el desafío está colgado (justo lo que provoca &quot;Agent is not</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="comment"># challenging&quot;), ese .result() bloquea PARA SIEMPRE y congela todo el</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="comment"># entrenamiento. Con wait=False se descarta la tarea colgada y se crea</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="comment"># un entorno nuevo y limpio.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">close</a>(wait=<span class="keyword">False</span>)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">pass</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="comment"># El worker del executor puede estar bloqueado en un step colgado:</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="comment"># lo abandonamos y creamos uno nuevo.</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">_executor</a>.shutdown(wait=<span class="keyword">False</span>, cancel_futures=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">pass</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">_executor</a> = ThreadPoolExecutor(max_workers=1)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        time.sleep(2)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a> = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6dfb18c04118987ce3227ce7e667b82f">_factory</a>()</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment"># ------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="" data-end="">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a3c46e6a75bd79a0ad9862e61e3c595aa">  153</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a3c46e6a75bd79a0ad9862e61e3c595aa">reset</a>(self, *, seed=None, options=None):</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        attempts = 4</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(attempts):</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="comment"># Limpieza preventiva: cierra batallas locales sin terminar para</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="comment"># evitar el OSError &quot;battles still running&quot; y la reconstrucción</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                <span class="comment"># del entorno (que es lenta). Es inocua en el reset normal.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a99a026905019c4cd0ceb4e2fa53dc74a">_finish_lingering_battles</a>()</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                obs, infos = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a3c46e6a75bd79a0ad9862e61e3c595aa">reset</a>(seed, options)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.battle2 <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a>.reset_battles()</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a>._battles[</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.battle2.battle_tag</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    ] = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.battle2</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                a1 = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.agents[0]</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">_extract_mask</a>(obs[a1])</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                <span class="keywordflow">return</span> obs[a1][<span class="stringliteral">&quot;observation&quot;</span>], infos[a1]</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">except</span> (TimeoutError, OSError) <span class="keyword">as</span> e:</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="comment"># TimeoutError (&quot;Agent is not challenging&quot;) y OSError (&quot;battles</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                <span class="comment"># still running&quot;) indican conexión/estado roto: reconstruimos.</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    <span class="comment"># Modo debug: sin reintentos; muestra el traceback real.</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    print(<span class="stringliteral">&quot;[env.reset] MODO DEBUG: traceback real -&gt;&quot;</span>, flush=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    traceback.print_exc()</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    <span class="keywordflow">raise</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">if</span> i == attempts - 1:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    <span class="keywordflow">raise</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                print(</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    f<span class="stringliteral">&quot;[env.reset] fallo ({type(e).__name__}: {e}); reconstruyendo &quot;</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    f<span class="stringliteral">&quot;entorno y reintentando ({i + 1}/{attempts - 1})...&quot;</span>,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    flush=<span class="keyword">True</span>,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                )</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">_rebuild</a>()</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+</div>
+<div class="foldopen" id="foldopen00187" data-start="" data-end="">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a4270abb7a0940c74d2c20ed68c98cf3d">  187</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a4270abb7a0940c74d2c20ed68c98cf3d">step</a>(self, action):</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        pe = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        b1, b2 = pe.battle1, pe.battle2</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="comment"># Guardia: si la batalla ya terminó, estado terminal limpio.</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">if</span> (b1 <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> b1.finished) <span class="keywordflow">or</span> (b2 <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> b2.finished):</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            reward = 0.0</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">if</span> b1 <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> b1.finished:</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                reward = 1.0 <span class="keywordflow">if</span> b1.won <span class="keywordflow">else</span> -1.0</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            pe.battle1 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            pe.battle2 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = np.ones(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>, dtype=bool)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="keywordflow">return</span> self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">_zeros</a>(), reward, <span class="keyword">True</span>, <span class="keyword">False</span>, {}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        a1, a2 = pe.agents[0], pe.agents[1]</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        opp_action = self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8780af58051a13e628421f47821dad05">_opponent_action</a>(b2)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        actions = {a1: action, a2: opp_action}</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="comment"># Ejecutar el turno con WATCHDOG: si tarda más de step_timeout, el</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment"># combate está atascado -&gt; abandonar y reconstruir (rápido, sin esperar</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="comment"># al temporizador del servidor, que tarda minutos).</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="comment"># Modo debug: sin watchdog ni captura -&gt; traceback real del turno.</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            obs, rewards, terms, truncs, infos = pe.step(actions)</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                fut = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">_executor</a>.submit(pe.step, actions)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                obs, rewards, terms, truncs, infos = fut.result(timeout=self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a769720bdd679f747d6bc4c4cdbbc99a5">_step_timeout</a>)</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">except</span> FuturesTimeoutError:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                print(</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                    f<span class="stringliteral">&quot;[env.step] turno atascado &gt;{self._step_timeout:.0f}s; &quot;</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                    f<span class="stringliteral">&quot;abandonando combate y reconstruyendo entorno...&quot;</span>,</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    flush=<span class="keyword">True</span>,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                )</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">_rebuild</a>()</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = np.ones(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>, dtype=bool)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <span class="keywordflow">return</span> self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">_zeros</a>(), 0.0, <span class="keyword">True</span>, <span class="keyword">False</span>, {}</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">except</span> (AssertionError, ValueError, IndexError):</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                pe.battle1 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                pe.battle2 = <span class="keywordtype">None</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = np.ones(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>, dtype=bool)</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="keywordflow">return</span> self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">_zeros</a>(), 0.0, <span class="keyword">True</span>, <span class="keyword">False</span>, {}</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        a1_obs = obs[a1]</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a> = self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">_extract_mask</a>(a1_obs)</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> (</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            a1_obs[<span class="stringliteral">&quot;observation&quot;</span>],</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            rewards[a1],</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            terms[a1],</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            truncs[a1],</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            infos[a1],</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        )</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment"># ------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="foldopen" id="foldopen00242" data-start="" data-end="">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aed876fd1d5b1f8f2a333734f49d170dc">  242</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aed876fd1d5b1f8f2a333734f49d170dc">action_masks</a>(self) -&gt; np.ndarray:</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="stringliteral">&quot;&quot;&quot;Máscara de acciones legales del agente RL (la consume MaskablePPO).&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keywordflow">return</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">_last_mask</a></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+</div>
+<div class="foldopen" id="foldopen00246" data-start="" data-end="">
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">  246</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">_extract_mask</a>(self, agent_obs) -&gt; np.ndarray:</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">return</span> self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">_sanitize_mask</a>(agent_obs[<span class="stringliteral">&quot;action_mask&quot;</span>])</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+</div>
+<div class="foldopen" id="foldopen00249" data-start="" data-end="">
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">  249</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">_sanitize_mask</a>(self, mask) -&gt; np.ndarray:</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        mask = np.asarray(mask, dtype=bool)</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">if</span> mask.shape[0] != self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>:</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> np.ones(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a>, dtype=bool)</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">_is_doubles</a>:</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            half = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">_mask_len</a> // 2</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> mask[:half].any():</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                mask[0] = <span class="keyword">True</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> mask[half:].any():</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                mask[half] = <span class="keyword">True</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">elif</span> <span class="keywordflow">not</span> mask.any():</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            mask[0] = <span class="keyword">True</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">return</span> mask</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+</div>
+<div class="foldopen" id="foldopen00263" data-start="" data-end="">
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">  263</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">_zeros</a>(self) -&gt; np.ndarray:</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">return</span> np.zeros(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ae631a77f06d38b3820adaae2e0a7bfa7">observation_space</a>.shape, dtype=np.float32)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+</div>
+<div class="foldopen" id="foldopen00266" data-start="" data-end="">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8780af58051a13e628421f47821dad05">  266</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8780af58051a13e628421f47821dad05">_opponent_action</a>(self, battle):</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="stringliteral">        Acción del oponente, por prioridad:</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="stringliteral">          1. SELF-PLAY (opponent_model) -&gt; política RL.</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="stringliteral">          2. HEURÍSTICO (Player) -&gt; choose_move.</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="stringliteral">          3. ALEATORIO -&gt; muestreo de la máscara.</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">_opponent_model</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                obs = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.embed_battle(battle)</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                mask = self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">_sanitize_mask</a>(self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.get_action_mask(battle))</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                action, _ = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">_opponent_model</a>.predict(</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    obs, action_masks=mask, deterministic=<span class="keyword">False</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                )</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                action = np.asarray(action)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">_is_doubles</a>:</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                    <span class="keywordflow">return</span> action.reshape(-1)[:2].astype(np.int64)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                <span class="keywordflow">return</span> np.int64(action.reshape(-1)[0])</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                    print(<span class="stringliteral">&quot;[opponent_model] error (se usaría aleatorio) -&gt;&quot;</span>, flush=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                    traceback.print_exc()</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                <span class="keyword">from</span> collections.abc <span class="keyword">import</span> Awaitable</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                order = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">_opponent</a>.choose_move(battle)</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(order, Awaitable):</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                    <span class="keywordflow">return</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.order_to_action(</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                        order, battle, fake=<span class="keyword">False</span>, strict=<span class="keyword">False</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    )</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                    print(<span class="stringliteral">&quot;[opponent] error (se usaría aleatorio) -&gt;&quot;</span>, flush=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                    traceback.print_exc()</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keywordflow">return</span> self.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa3e6d766fbcdfa00839ea1ee44efb59f">_sample_from_mask</a>(battle)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+</div>
+<div class="foldopen" id="foldopen00304" data-start="" data-end="">
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa3e6d766fbcdfa00839ea1ee44efb59f">  304</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa3e6d766fbcdfa00839ea1ee44efb59f">_sample_from_mask</a>(self, battle):</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        mask = self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.get_action_mask(battle)</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">_is_doubles</a>:</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            half = len(mask) // 2</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            valid0 = [i <span class="keywordflow">for</span> i, m <span class="keywordflow">in</span> enumerate(mask[:half]) <span class="keywordflow">if</span> m] <span class="keywordflow">or</span> [0]</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            valid1 = [i <span class="keywordflow">for</span> i, m <span class="keywordflow">in</span> enumerate(mask[half:]) <span class="keywordflow">if</span> m] <span class="keywordflow">or</span> [0]</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            <span class="keywordflow">return</span> np.array(</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>                [random.choice(valid0), random.choice(valid1)], dtype=np.int64</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            )</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        valid = [i <span class="keywordflow">for</span> i, m <span class="keywordflow">in</span> enumerate(mask) <span class="keywordflow">if</span> m] <span class="keywordflow">or</span> [0]</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">return</span> np.int64(random.choice(valid))</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+</div>
+<div class="foldopen" id="foldopen00316" data-start="" data-end="">
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa5bcc49c36e7f004f03d4ca37c78a61f">  316</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa5bcc49c36e7f004f03d4ca37c78a61f">render</a>(self):</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">return</span> self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa5bcc49c36e7f004f03d4ca37c78a61f">render</a>()</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+</div>
+<div class="foldopen" id="foldopen00319" data-start="" data-end="">
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">  319</a></span>    <span class="keyword">def </span><a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">close</a>(self):</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">_executor</a>.shutdown(wait=<span class="keyword">False</span>, cancel_futures=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            <span class="keywordflow">pass</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            <span class="comment"># wait=False para no quedar bloqueado en _challenge_task.result()</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            <span class="comment"># si quedara un desafío colgado al cerrar (ver _rebuild).</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            self.<a class="code hl_variable" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">_env</a>.<a class="code hl_function" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">close</a>(wait=<span class="keyword">False</span>)</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <span class="keywordflow">pass</span></div>
+</div>
+</div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html">src.rl_wrapper.OpponentSamplingEnv</a></div><div class="ttdef"><b>Definition</b> <a href="#l00051">rl_wrapper.py:51</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a0087eb5bbf29cda3cb6244d617f82434"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0087eb5bbf29cda3cb6244d617f82434">src.rl_wrapper.OpponentSamplingEnv.action_space</a></div><div class="ttdeci">action_space</div><div class="ttdef"><b>Definition</b> <a href="#l00074">rl_wrapper.py:74</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a0cf46d4800e139ebe81b537b4906d5ee"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a0cf46d4800e139ebe81b537b4906d5ee">src.rl_wrapper.OpponentSamplingEnv._opponent_model</a></div><div class="ttdeci">_opponent_model</div><div class="ttdef"><b>Definition</b> <a href="#l00068">rl_wrapper.py:68</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a1503a32c85eb6b6e70c6ab304e9b74c0"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">src.rl_wrapper.OpponentSamplingEnv._sanitize_mask</a></div><div class="ttdeci">np.ndarray _sanitize_mask(self, mask)</div><div class="ttdef"><b>Definition</b> <a href="#l00249">rl_wrapper.py:249</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a1ca1165721dbb28ef2ec6c7a2296347e"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1ca1165721dbb28ef2ec6c7a2296347e">src.rl_wrapper.OpponentSamplingEnv._opponent</a></div><div class="ttdeci">_opponent</div><div class="ttdef"><b>Definition</b> <a href="#l00067">rl_wrapper.py:67</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a1fb79b98b11414d8d5b22dc2f8c2d295"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">src.rl_wrapper.OpponentSamplingEnv.close</a></div><div class="ttdeci">close(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00319">rl_wrapper.py:319</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a20d8ad1a9a658344d4d09fe207e9c4ec"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a20d8ad1a9a658344d4d09fe207e9c4ec">src.rl_wrapper.OpponentSamplingEnv._force_finish_battles</a></div><div class="ttdeci">_force_finish_battles(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00095">rl_wrapper.py:95</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a25e3fe8b8824dd54998ce60b8de52755"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">src.rl_wrapper.OpponentSamplingEnv._rebuild</a></div><div class="ttdeci">_rebuild(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00128">rl_wrapper.py:128</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a388bd729b47323507491b17086096c75"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a388bd729b47323507491b17086096c75">src.rl_wrapper.OpponentSamplingEnv._env</a></div><div class="ttdeci">_env</div><div class="ttdef"><b>Definition</b> <a href="#l00066">rl_wrapper.py:66</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a3c46e6a75bd79a0ad9862e61e3c595aa"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a3c46e6a75bd79a0ad9862e61e3c595aa">src.rl_wrapper.OpponentSamplingEnv.reset</a></div><div class="ttdeci">reset(self, *, seed=None, options=None)</div><div class="ttdef"><b>Definition</b> <a href="#l00153">rl_wrapper.py:153</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a4270abb7a0940c74d2c20ed68c98cf3d"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a4270abb7a0940c74d2c20ed68c98cf3d">src.rl_wrapper.OpponentSamplingEnv.step</a></div><div class="ttdeci">step(self, action)</div><div class="ttdef"><b>Definition</b> <a href="#l00187">rl_wrapper.py:187</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a50367d5d19756c4fd17bc417dd08808a"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">src.rl_wrapper.OpponentSamplingEnv._extract_mask</a></div><div class="ttdeci">np.ndarray _extract_mask(self, agent_obs)</div><div class="ttdef"><b>Definition</b> <a href="#l00246">rl_wrapper.py:246</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a54ecea208e3a08e5d0ac9cd1f15e1de7"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a54ecea208e3a08e5d0ac9cd1f15e1de7">src.rl_wrapper.OpponentSamplingEnv._executor</a></div><div class="ttdeci">_executor</div><div class="ttdef"><b>Definition</b> <a href="#l00070">rl_wrapper.py:70</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a6230f32627b480d051edd28a3f0177af"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">src.rl_wrapper.OpponentSamplingEnv._zeros</a></div><div class="ttdeci">np.ndarray _zeros(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00263">rl_wrapper.py:263</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a6dfb18c04118987ce3227ce7e667b82f"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6dfb18c04118987ce3227ce7e667b82f">src.rl_wrapper.OpponentSamplingEnv._factory</a></div><div class="ttdeci">_factory</div><div class="ttdef"><b>Definition</b> <a href="#l00065">rl_wrapper.py:65</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a7534fe2b34034a6e0c596e74119a49c4"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a7534fe2b34034a6e0c596e74119a49c4">src.rl_wrapper.OpponentSamplingEnv.set_opponent_model</a></div><div class="ttdeci">set_opponent_model(self, model)</div><div class="ttdef"><b>Definition</b> <a href="#l00088">rl_wrapper.py:88</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a769720bdd679f747d6bc4c4cdbbc99a5"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a769720bdd679f747d6bc4c4cdbbc99a5">src.rl_wrapper.OpponentSamplingEnv._step_timeout</a></div><div class="ttdeci">_step_timeout</div><div class="ttdef"><b>Definition</b> <a href="#l00069">rl_wrapper.py:69</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a849fc3f47e15da9a78949d092ed26969"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a849fc3f47e15da9a78949d092ed26969">src.rl_wrapper.OpponentSamplingEnv._mask_len</a></div><div class="ttdeci">_mask_len</div><div class="ttdef"><b>Definition</b> <a href="#l00077">rl_wrapper.py:77</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a8780af58051a13e628421f47821dad05"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8780af58051a13e628421f47821dad05">src.rl_wrapper.OpponentSamplingEnv._opponent_action</a></div><div class="ttdeci">_opponent_action(self, battle)</div><div class="ttdef"><b>Definition</b> <a href="#l00266">rl_wrapper.py:266</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a8fbcb7279abc66d2add380fe9ab59f36"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8fbcb7279abc66d2add380fe9ab59f36">src.rl_wrapper.OpponentSamplingEnv.poke_env</a></div><div class="ttdeci">poke_env(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00085">rl_wrapper.py:85</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_a99a026905019c4cd0ceb4e2fa53dc74a"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a99a026905019c4cd0ceb4e2fa53dc74a">src.rl_wrapper.OpponentSamplingEnv._finish_lingering_battles</a></div><div class="ttdeci">_finish_lingering_battles(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00110">rl_wrapper.py:110</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_aa3e6d766fbcdfa00839ea1ee44efb59f"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa3e6d766fbcdfa00839ea1ee44efb59f">src.rl_wrapper.OpponentSamplingEnv._sample_from_mask</a></div><div class="ttdeci">_sample_from_mask(self, battle)</div><div class="ttdef"><b>Definition</b> <a href="#l00304">rl_wrapper.py:304</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_aa5bcc49c36e7f004f03d4ca37c78a61f"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa5bcc49c36e7f004f03d4ca37c78a61f">src.rl_wrapper.OpponentSamplingEnv.render</a></div><div class="ttdeci">render(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00316">rl_wrapper.py:316</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_aaafdcbd9d7d1a3740d4cb1fe4f948199"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aaafdcbd9d7d1a3740d4cb1fe4f948199">src.rl_wrapper.OpponentSamplingEnv._last_mask</a></div><div class="ttdeci">np.ndarray _last_mask</div><div class="ttdef"><b>Definition</b> <a href="#l00080">rl_wrapper.py:80</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_abb10b4fb9aec10cb861edfc263c01e4d"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#abb10b4fb9aec10cb861edfc263c01e4d">src.rl_wrapper.OpponentSamplingEnv._is_doubles</a></div><div class="ttdeci">_is_doubles</div><div class="ttdef"><b>Definition</b> <a href="#l00075">rl_wrapper.py:75</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_ad6999446dec58e05a6ccda4b7eabb021"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ad6999446dec58e05a6ccda4b7eabb021">src.rl_wrapper.OpponentSamplingEnv.__init__</a></div><div class="ttdeci">__init__(self, env_factory, opponent=None, float step_timeout=30.0)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">rl_wrapper.py:54</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_ae631a77f06d38b3820adaae2e0a7bfa7"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ae631a77f06d38b3820adaae2e0a7bfa7">src.rl_wrapper.OpponentSamplingEnv.observation_space</a></div><div class="ttdeci">observation_space</div><div class="ttdef"><b>Definition</b> <a href="#l00073">rl_wrapper.py:73</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rl__wrapper_1_1_opponent_sampling_env_html_aed876fd1d5b1f8f2a333734f49d170dc"><div class="ttname"><a href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aed876fd1d5b1f8f2a333734f49d170dc">src.rl_wrapper.OpponentSamplingEnv.action_masks</a></div><div class="ttdeci">np.ndarray action_masks(self)</div><div class="ttdef"><b>Definition</b> <a href="#l00242">rl_wrapper.py:242</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="rl__wrapper_8py.html">rl_wrapper.py</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

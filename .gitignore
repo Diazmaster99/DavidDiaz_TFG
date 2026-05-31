@@ -1,0 +1,53 @@
+# ---- Entorno virtual ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Servidor Pokemon Showdown (fork de vgc-bench, ~250MB + node_modules) ----
+# Es infraestructura externa (Node.js). Se reinstala clonando el fork:
+#   git clone -b vgc-bench https://github.com/cameronangliss/pokemon-showdown.git
+#   cd pokemon-showdown && npm i
+pokemon-showdown/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.ipynb_checkpoints/
+
+# ---- Caches y tests ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# ---- Logs de TensorBoard (regenerables) ----
+logs/
+
+# ---- Replays de batallas guardados ----
+replays/
+replay/
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Sistema operativo ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Credenciales (por si acaso) ----
+*.env
+.env
+secrets.json

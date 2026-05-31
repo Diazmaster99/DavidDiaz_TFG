@@ -1,0 +1,38 @@
+# Dependencias de DavidDiaz_TFG
+# Bots de singles y dobles VGC con RL (PPO + poke-env)
+# Requiere Python 3.10 - 3.13
+#
+# Instalación en un entorno virtual (recomendado):
+#   python -m venv .venv
+#   .venv\Scripts\activate           (Windows)
+#   pip install -r requirements.txt
+#
+# Esto instala TODO lo necesario para entrenar, jugar y generar las gráficas.
+# numpy y gymnasium se instalan automáticamente como dependencias de poke-env,
+# Stable-Baselines3 y torch.
+# Para reproducir el entorno EXACTO ya verificado (todas las versiones, incluidas
+# las transitivas):  pip install -r requirements.lock
+
+# --- poke-env (PyPI estándar) ---
+# La versión 0.15.0 de PyPI incluye PokeEnv, SinglesEnv, DoublesEnv y
+# SingleAgentWrapper, que es todo lo que necesita el proyecto.
+# Se conecta a un servidor Showdown estándar local.
+poke-env==0.15.0
+
+# --- Aprendizaje por Refuerzo ---
+stable_baselines3==2.7.1
+# sb3-contrib aporta MaskablePPO (action masking: el bot solo elige jugadas legales)
+sb3-contrib==2.7.0
+
+# --- Red Neuronal (build CPU) ---
+# Para GPU instala el build CUDA aparte:
+#   pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cu121
+torch==2.9.1
+
+# --- Logging / TensorBoard ---
+tensorboard==2.20.0
+
+# --- Gráficas de métricas (plot_metrics.py) ---
+# Exporta a PNG las curvas de TensorBoard (tasa de victorias, recompensa media,
+# entropía, etc.) para incluirlas en la memoria.
+matplotlib==3.10.9

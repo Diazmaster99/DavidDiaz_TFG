@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Miembros de clases - Funciones</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="contents">
+<div class="textblock">Lista de todas las funciones con enlaces a las clases a las que pertenecen:</div><br/>
+<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="#index_y">Y</a><div class="alphasepar"></div><a class="qindex" href="#index__">_</a></div>
+
+
+<h3 class="doxsection"><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>__init__()&#160;:&#160;<a class="el" href="classplay_1_1_r_l_doubles_player.html#ad23448bc22ed61720c9e706fb7e02775">play.RLDoublesPlayer</a>, <a class="el" href="classplay_1_1_r_l_singles_player.html#a326ffeee08edb6086613bc3f7c52db93">play.RLSinglesPlayer</a>, <a class="el" href="classsrc_1_1callbacks_1_1_win_rate_callback.html#af616597bdfd3bf307f1d07f00e4edcbe">src.callbacks.WinRateCallback</a>, <a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a61b62347d9bd9449153f318691c7114d">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1doubles__env_1_1_my_doubles_env.html#a7e07e2f42cecb910e0ae246a54b82242">src.doubles_env.MyDoublesEnv</a>, <a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#a348b1a013b0175fbf177da2861f36d9c">src.policy.BattleTransformerExtractor</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#ad6999446dec58e05a6ccda4b7eabb021">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_my_singles_env.html#a3e78818092b89e6c279bdaec6d0341bf">src.singles_env.MySinglesEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#af9f714ff4b81392c46bcb1ceb213dd70">src.singles_env.SinglesGymEnv</a>, <a class="el" href="classsrc_1_1teams_1_1_random_team_builder.html#ac2aeb08b92d07b307edf38aacbe3178b">src.teams.RandomTeamBuilder</a></li>
+<li>__len__()&#160;:&#160;<a class="el" href="classsrc_1_1teams_1_1_random_team_builder.html#a035a29edfa5aa605f3b60038e9274508">src.teams.RandomTeamBuilder</a></li>
+<li>_extract_mask()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a50367d5d19756c4fd17bc417dd08808a">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_finish_lingering_battles()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a99a026905019c4cd0ceb4e2fa53dc74a">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_force_finish_battles()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a20d8ad1a9a658344d4d09fe207e9c4ec">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_on_step()&#160;:&#160;<a class="el" href="classsrc_1_1callbacks_1_1_win_rate_callback.html#a4e17009698f18c86fc3be56928de9fd2">src.callbacks.WinRateCallback</a></li>
+<li>_opponent_action()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8780af58051a13e628421f47821dad05">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_rebuild()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a25e3fe8b8824dd54998ce60b8de52755">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_sample_from_mask()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa3e6d766fbcdfa00839ea1ee44efb59f">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_sanitize_mask()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1503a32c85eb6b6e70c6ab304e9b74c0">src.rl_wrapper.OpponentSamplingEnv</a></li>
+<li>_zeros()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a6230f32627b480d051edd28a3f0177af">src.rl_wrapper.OpponentSamplingEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>action_masks()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a330218f7a8b9addf70ed73316cd0e593">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aed876fd1d5b1f8f2a333734f49d170dc">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a868e0f1b28244f86123396bfece10365">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>calc_reward()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_my_doubles_env.html#adc7ae8948a2763cde4abc2441002d4f9">src.doubles_env.MyDoublesEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_my_singles_env.html#ae23ab437d65f7034eb7c0ad9e9745c2e">src.singles_env.MySinglesEnv</a></li>
+<li>choose_move()&#160;:&#160;<a class="el" href="classplay_1_1_r_l_doubles_player.html#a8f97a4d5a5e7d1e12e2912c55fd5f1d5">play.RLDoublesPlayer</a>, <a class="el" href="classplay_1_1_r_l_singles_player.html#ac97785ba06db65dc9e7539eb8447d598">play.RLSinglesPlayer</a></li>
+<li>close()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#aaee0d35abb2035fd5a6366c27c558a0e">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a1fb79b98b11414d8d5b22dc2f8c2d295">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a07aff33cd68066235ac3e237f4341ffe">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>embed_battle()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_my_doubles_env.html#a9f8968ad389ddf71d0ab8b1ab73cd87b">src.doubles_env.MyDoublesEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_my_singles_env.html#a7d0bb1e8a7f20cd42423ee30823a76da">src.singles_env.MySinglesEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>filter()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1___suppress_open_team_sheet_filter.html#a3d100895d2181d3723df499056c231df">src.doubles_env._SuppressOpenTeamSheetFilter</a></li>
+<li>forward()&#160;:&#160;<a class="el" href="classsrc_1_1policy_1_1_battle_transformer_extractor.html#a819ad7aee9d3f7746d240cfa796e5ebd">src.policy.BattleTransformerExtractor</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>poke_env()&#160;:&#160;<a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a8fbcb7279abc66d2add380fe9ab59f36">src.rl_wrapper.OpponentSamplingEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>render()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#aa6bf32e50bf07f0cd607b49abf0fbfc0">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#aa5bcc49c36e7f004f03d4ca37c78a61f">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a33397f253d63470e71231fdc2f3e8fe0">src.singles_env.SinglesGymEnv</a></li>
+<li>reset()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#af802f872b2e44f67f51a47e690e8e58d">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a3c46e6a75bd79a0ad9862e61e3c595aa">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a33bcb2c2fe902121075d9167543aadc3">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>set_opponent_model()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#a17c65118b8af4cb9fe685b4207b60633">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a7534fe2b34034a6e0c596e74119a49c4">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#ae03d1f94e3e56a90f20c48686a869691">src.singles_env.SinglesGymEnv</a></li>
+<li>step()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#aa833c24fdead5909e4b849afbe67b07d">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1rl__wrapper_1_1_opponent_sampling_env.html#a4270abb7a0940c74d2c20ed68c98cf3d">src.rl_wrapper.OpponentSamplingEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#a804574e8b9f8a47c598edbb6c1027677">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>teampreview()&#160;:&#160;<a class="el" href="classplay_1_1_r_l_doubles_player.html#a30790260e0dfea7ed48cbabfd3374c6a">play.RLDoublesPlayer</a>, <a class="el" href="classplay_1_1_r_l_singles_player.html#a4c6dfb707b875d353eb3c565224b13be">play.RLSinglesPlayer</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>win_rate()&#160;:&#160;<a class="el" href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html#aa5e778af3965f29a17eef3b62ca47048">src.doubles_env.DoublesGymEnv</a>, <a class="el" href="classsrc_1_1singles__env_1_1_singles_gym_env.html#abf73c905739eccf9c34381a98fba8662">src.singles_env.SinglesGymEnv</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_y" name="index_y"></a>- y -</h3><ul>
+<li>yield_team()&#160;:&#160;<a class="el" href="classsrc_1_1teams_1_1_random_team_builder.html#ab363b6cd6516bea863b70d867029ce3d">src.teams.RandomTeamBuilder</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

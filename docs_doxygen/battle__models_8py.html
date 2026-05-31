@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Referencia del archivo battle_models.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('battle__models_8py.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo battle_models.py</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="battle__models_8py_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Espacios de nombres</h2></td></tr>
+<tr class="memitem:battle_5Fmodels" id="r_battle_5Fmodels"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html">battle_models</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a67f603078cfab4c7af4606532a4dd6ec" id="r_a67f603078cfab4c7af4606532a4dd6ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a67f603078cfab4c7af4606532a4dd6ec">battle_models.check_server</a> (<a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> port)</td></tr>
+<tr class="memitem:a9baf08ca8150caa45339b44de22ac4ab" id="r_a9baf08ca8150caa45339b44de22ac4ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a9baf08ca8150caa45339b44de22ac4ab">battle_models.load_model</a> (<a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> mode, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> battle_format, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> policy, <a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> run_id, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag=&quot;&quot;)</td></tr>
+<tr class="memitem:a24b3c10d491dfd0c63cde19adcdcf1cc" id="r_a24b3c10d491dfd0c63cde19adcdcf1cc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a24b3c10d491dfd0c63cde19adcdcf1cc">battle_models.make_agent</a> (spec, mode, battle_format, team_builder, server, run_id, name, tag=&quot;&quot;)</td></tr>
+<tr class="memitem:ad298fcec3479b140c0c92154d4a8bff0" id="r_ad298fcec3479b140c0c92154d4a8bff0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ad298fcec3479b140c0c92154d4a8bff0">battle_models.battle</a> (<a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> mode, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> battle_format, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a>|<a class="el" href="namespacebattle__models.html#ae474bd8e494e8d1b3c235ca8ece64ba4">None</a> team_path, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> spec_a, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> spec_b, <a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> run_id_a, <a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> run_id_b, <a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> n_battles, <a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">int</a> port, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag_a=&quot;&quot;, <a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">str</a> tag_b=&quot;&quot;)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a24a39b66ebb81d59c66eca67d6e990c1" id="r_a24a39b66ebb81d59c66eca67d6e990c1"><td class="memItemLeft">tuple&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a24a39b66ebb81d59c66eca67d6e990c1">battle_models.RL_SPECS</a> = (&quot;mlp&quot;, &quot;transformer&quot;)</td></tr>
+<tr class="memitem:a5ba8a65968fcc03b352fe112d64617ec" id="r_a5ba8a65968fcc03b352fe112d64617ec"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a5ba8a65968fcc03b352fe112d64617ec">battle_models.BASELINE_CLS</a></td></tr>
+<tr class="memitem:a1ae174ce8ea89b4f76479144cf054c40" id="r_a1ae174ce8ea89b4f76479144cf054c40"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a1ae174ce8ea89b4f76479144cf054c40">battle_models.AGENT_CHOICES</a> = list(<a class="el" href="namespacebattle__models.html#a24a39b66ebb81d59c66eca67d6e990c1">RL_SPECS</a>) + list(<a class="el" href="namespacebattle__models.html#a5ba8a65968fcc03b352fe112d64617ec">BASELINE_CLS</a>)</td></tr>
+<tr class="memitem:a9247553c9091a4813f432f1ec99f231d" id="r_a9247553c9091a4813f432f1ec99f231d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a9247553c9091a4813f432f1ec99f231d">battle_models.parser</a></td></tr>
+<tr class="memitem:ae45308c5f36c268a6497a4fcabe7b576" id="r_ae45308c5f36c268a6497a4fcabe7b576"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ae45308c5f36c268a6497a4fcabe7b576">battle_models.choices</a></td></tr>
+<tr class="memitem:a4e505c3d7e9e82bc074c81b1099a8cec" id="r_a4e505c3d7e9e82bc074c81b1099a8cec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a4e505c3d7e9e82bc074c81b1099a8cec">battle_models.required</a></td></tr>
+<tr class="memitem:a0401685203377d6ccef4cb1533363c94" id="r_a0401685203377d6ccef4cb1533363c94"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a0401685203377d6ccef4cb1533363c94">battle_models.type</a></td></tr>
+<tr class="memitem:a8fcdca3f69afed84436b6d4d45ba5ef2" id="r_a8fcdca3f69afed84436b6d4d45ba5ef2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a8fcdca3f69afed84436b6d4d45ba5ef2">battle_models.str</a></td></tr>
+<tr class="memitem:ac17f5b4e15f47a69ec531729d0b25fdf" id="r_ac17f5b4e15f47a69ec531729d0b25fdf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ac17f5b4e15f47a69ec531729d0b25fdf">battle_models.default</a></td></tr>
+<tr class="memitem:ae474bd8e494e8d1b3c235ca8ece64ba4" id="r_ae474bd8e494e8d1b3c235ca8ece64ba4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ae474bd8e494e8d1b3c235ca8ece64ba4">battle_models.None</a></td></tr>
+<tr class="memitem:ad8774529c4298af6c3e1c433b294d103" id="r_ad8774529c4298af6c3e1c433b294d103"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ad8774529c4298af6c3e1c433b294d103">battle_models.dest</a></td></tr>
+<tr class="memitem:ab8cd9fe810afb263c270a947faaf8d8f" id="r_ab8cd9fe810afb263c270a947faaf8d8f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#ab8cd9fe810afb263c270a947faaf8d8f">battle_models.help</a></td></tr>
+<tr class="memitem:a7c86480ba98f01224953eac661b5c38f" id="r_a7c86480ba98f01224953eac661b5c38f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a7c86480ba98f01224953eac661b5c38f">battle_models.int</a></td></tr>
+<tr class="memitem:af00b99b170268a11c04ea373954cd1d8" id="r_af00b99b170268a11c04ea373954cd1d8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#af00b99b170268a11c04ea373954cd1d8">battle_models.args</a> = parser.parse_args()</td></tr>
+<tr class="memitem:a4587b3ec1b23fd082cdf490389c27157" id="r_a4587b3ec1b23fd082cdf490389c27157"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespacebattle__models.html#a4587b3ec1b23fd082cdf490389c27157">battle_models.fmt</a></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="battle__models_8py.html">battle_models.py</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DavidDiaz_TFG - Bot VGC con PPO: Referencia de la clase src.doubles_env.DoublesGymEnv</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DavidDiaz_TFG - Bot VGC con PPO<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Agente de aprendizaje por refuerzo para combates Pokémon VGC</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classsrc_1_1doubles__env_1_1_doubles_gym_env.html','','classsrc_1_1doubles__env_1_1_doubles_gym_env-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase src.doubles_env.DoublesGymEnv</div></div>
+</div><!--header-->
+<div class="contents">
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de herencia de src.doubles_env.DoublesGymEnv</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="classsrc_1_1doubles__env_1_1_doubles_gym_env.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a61b62347d9bd9449153f318691c7114d" id="r_a61b62347d9bd9449153f318691c7114d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61b62347d9bd9449153f318691c7114d">__init__</a> (self, int port=8000, str battle_format=&quot;gen9randomdoublesbattle&quot;, int log_level=40, str|None team_path=None, Player|None opponent=None, str opponent_type=&quot;random&quot;)</td></tr>
+<tr class="memitem:af802f872b2e44f67f51a47e690e8e58d" id="r_af802f872b2e44f67f51a47e690e8e58d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af802f872b2e44f67f51a47e690e8e58d">reset</a> (self, *, seed=None, options=None)</td></tr>
+<tr class="memitem:aa833c24fdead5909e4b849afbe67b07d" id="r_aa833c24fdead5909e4b849afbe67b07d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa833c24fdead5909e4b849afbe67b07d">step</a> (self, action)</td></tr>
+<tr class="memitem:a330218f7a8b9addf70ed73316cd0e593" id="r_a330218f7a8b9addf70ed73316cd0e593"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a330218f7a8b9addf70ed73316cd0e593">action_masks</a> (self)</td></tr>
+<tr class="memitem:a17c65118b8af4cb9fe685b4207b60633" id="r_a17c65118b8af4cb9fe685b4207b60633"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a17c65118b8af4cb9fe685b4207b60633">set_opponent_model</a> (self, model)</td></tr>
+<tr class="memitem:aa6bf32e50bf07f0cd607b49abf0fbfc0" id="r_aa6bf32e50bf07f0cd607b49abf0fbfc0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa6bf32e50bf07f0cd607b49abf0fbfc0">render</a> (self)</td></tr>
+<tr class="memitem:aaee0d35abb2035fd5a6366c27c558a0e" id="r_aaee0d35abb2035fd5a6366c27c558a0e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaee0d35abb2035fd5a6366c27c558a0e">close</a> (self)</td></tr>
+<tr class="memitem:aa5e778af3965f29a17eef3b62ca47048" id="r_aa5e778af3965f29a17eef3b62ca47048"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa5e778af3965f29a17eef3b62ca47048">win_rate</a> (self)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a62202824cc16e75573c2f570c3b2b0e2" id="r_a62202824cc16e75573c2f570c3b2b0e2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a62202824cc16e75573c2f570c3b2b0e2">observation_space</a> = self._inner.observation_space</td></tr>
+<tr class="memitem:a93a55ab3c7636687acd47232e2d66129" id="r_a93a55ab3c7636687acd47232e2d66129"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a93a55ab3c7636687acd47232e2d66129">action_space</a> = self._inner.action_space</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a112308d2760fd43ee7a1879f8f86c5a1" id="r_a112308d2760fd43ee7a1879f8f86c5a1"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a112308d2760fd43ee7a1879f8f86c5a1">metadata</a> = {&quot;render_modes&quot;: []}</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:ab1249fb04893ffcc6c74400fa504f034" id="r_ab1249fb04893ffcc6c74400fa504f034"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab1249fb04893ffcc6c74400fa504f034">_opponent</a> = opponent</td></tr>
+<tr class="memitem:af8a6ddc58c2d81775639dfa79531b158" id="r_af8a6ddc58c2d81775639dfa79531b158"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af8a6ddc58c2d81775639dfa79531b158">_inner</a> = OpponentSamplingEnv(_make_poke_env, opponent=self._opponent)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><pre class="fragment">Envoltorio Gymnasium sobre SingleAgentWrapper + MyDoublesEnv.
+
+Aplana la observación (quita el action_mask) para compatibilidad
+con SB3 PPO + MlpPolicy.
+
+El espacio de acciones es MultiDiscrete([107, 107]).
+SB3 maneja MultiDiscrete nativamente con la política "MlpPolicy".
+
+Formatos soportados:
+  - "gen9randomdoublesbattle"  → equipos aleatorios, sin team_path, SIEMPRE funciona.
+  - "gen9vgc2025regg" (u otro VGC)  → requiere team_path con equipo VGC válido.
+
+team_path puede ser:
+  - None        → formatos aleatorios (sin equipo)
+  - un .txt     → siempre el mismo equipo (mirror match fijo)
+  - una carpeta → equipo ALEATORIO por combate (cada batalla usa equipos
+                  distintos de tu lista; normalmente no-mirror)
+
+Uso rápido (sin equipo):
+    env = DoublesGymEnv(port=8000)
+
+Uso VGC con un equipo fijo:
+    env = DoublesGymEnv(port=8000, battle_format="gen9vgc2025regg",
+                        team_path="teams/vgc/equipo1.txt")
+
+Uso VGC con equipos variados (carpeta):
+    env = DoublesGymEnv(port=8000, battle_format="gen9vgc2025regg",
+                        team_path="teams/vgc")
+
+NOTA: gen9doublesou y similares no funcionan (poke-env solo soporta
+teampreview para formatos VGC en SingleAgentWrapper).
+</pre> 
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00095">95</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a61b62347d9bd9449153f318691c7114d" name="a61b62347d9bd9449153f318691c7114d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b62347d9bd9449153f318691c7114d">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>port</em></span><span class="paramdefsep"> = </span><span class="paramdefval">8000</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>battle_format</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;gen9randomdoublesbattle&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>log_level</em></span><span class="paramdefsep"> = </span><span class="paramdefval">40</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str | None </td>          <td class="paramname"><span class="paramname"><em>team_path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player | None </td>          <td class="paramname"><span class="paramname"><em>opponent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>opponent_type</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;random&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00132">132</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a330218f7a8b9addf70ed73316cd0e593" name="a330218f7a8b9addf70ed73316cd0e593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330218f7a8b9addf70ed73316cd0e593">&#9670;&#160;</a></span>action_masks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.action_masks </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Mascara de acciones legales para MaskablePPO.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00213">213</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00213">action_masks()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00213">action_masks()</a>.</p>
+
+</div>
+</div>
+<a id="aaee0d35abb2035fd5a6366c27c558a0e" name="aaee0d35abb2035fd5a6366c27c558a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee0d35abb2035fd5a6366c27c558a0e">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.close </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00224">224</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00224">close()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00224">close()</a>.</p>
+
+</div>
+</div>
+<a id="aa6bf32e50bf07f0cd607b49abf0fbfc0" name="aa6bf32e50bf07f0cd607b49abf0fbfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bf32e50bf07f0cd607b49abf0fbfc0">&#9670;&#160;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.render </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00221">221</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00221">render()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00221">render()</a>.</p>
+
+</div>
+</div>
+<a id="af802f872b2e44f67f51a47e690e8e58d" name="af802f872b2e44f67f51a47e690e8e58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af802f872b2e44f67f51a47e690e8e58d">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.reset </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>seed</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>options</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00207">207</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00207">reset()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00207">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a17c65118b8af4cb9fe685b4207b60633" name="a17c65118b8af4cb9fe685b4207b60633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c65118b8af4cb9fe685b4207b60633">&#9670;&#160;</a></span>set_opponent_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.set_opponent_model </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Activa self-play: el rival jugara con la política de 'model'.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00217">217</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00217">set_opponent_model()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00217">set_opponent_model()</a>.</p>
+
+</div>
+</div>
+<a id="aa833c24fdead5909e4b849afbe67b07d" name="aa833c24fdead5909e4b849afbe67b07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa833c24fdead5909e4b849afbe67b07d">&#9670;&#160;</a></span>step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.step </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00210">210</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a> y <a class="el" href="doubles__env_8py_source.html#l00210">step()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00210">step()</a>.</p>
+
+</div>
+</div>
+<a id="aa5e778af3965f29a17eef3b62ca47048" name="aa5e778af3965f29a17eef3b62ca47048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e778af3965f29a17eef3b62ca47048">&#9670;&#160;</a></span>win_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> float src.doubles_env.DoublesGymEnv.win_rate </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Tasa de victorias del agente.</pre> 
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00228">228</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="doubles__env_8py_source.html#l00202">_inner</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="af8a6ddc58c2d81775639dfa79531b158" name="af8a6ddc58c2d81775639dfa79531b158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a6ddc58c2d81775639dfa79531b158">&#9670;&#160;</a></span>_inner</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv._inner = OpponentSamplingEnv(_make_poke_env, opponent=self._opponent)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00202">202</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="doubles__env_8py_source.html#l00213">action_masks()</a>, <a class="el" href="singles__env_8py_source.html#l00150">src.singles_env.SinglesGymEnv.action_masks()</a>, <a class="el" href="doubles__env_8py_source.html#l00224">close()</a>, <a class="el" href="singles__env_8py_source.html#l00161">src.singles_env.SinglesGymEnv.close()</a>, <a class="el" href="doubles__env_8py_source.html#l00221">render()</a>, <a class="el" href="singles__env_8py_source.html#l00158">src.singles_env.SinglesGymEnv.render()</a>, <a class="el" href="doubles__env_8py_source.html#l00207">reset()</a>, <a class="el" href="singles__env_8py_source.html#l00144">src.singles_env.SinglesGymEnv.reset()</a>, <a class="el" href="doubles__env_8py_source.html#l00217">set_opponent_model()</a>, <a class="el" href="singles__env_8py_source.html#l00154">src.singles_env.SinglesGymEnv.set_opponent_model()</a>, <a class="el" href="doubles__env_8py_source.html#l00210">step()</a>, <a class="el" href="singles__env_8py_source.html#l00147">src.singles_env.SinglesGymEnv.step()</a>, <a class="el" href="doubles__env_8py_source.html#l00228">win_rate()</a> y <a class="el" href="singles__env_8py_source.html#l00165">src.singles_env.SinglesGymEnv.win_rate()</a>.</p>
+
+</div>
+</div>
+<a id="ab1249fb04893ffcc6c74400fa504f034" name="ab1249fb04893ffcc6c74400fa504f034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1249fb04893ffcc6c74400fa504f034">&#9670;&#160;</a></span>_opponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv._opponent = opponent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00197">197</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="rl__wrapper_8py_source.html#l00266">src.rl_wrapper.OpponentSamplingEnv._opponent_action()</a> y <a class="el" href="rl__wrapper_8py_source.html#l00153">src.rl_wrapper.OpponentSamplingEnv.reset()</a>.</p>
+
+</div>
+</div>
+<a id="a93a55ab3c7636687acd47232e2d66129" name="a93a55ab3c7636687acd47232e2d66129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a55ab3c7636687acd47232e2d66129">&#9670;&#160;</a></span>action_space</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.action_space = self._inner.action_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00205">205</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+</div>
+</div>
+<a id="a112308d2760fd43ee7a1879f8f86c5a1" name="a112308d2760fd43ee7a1879f8f86c5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112308d2760fd43ee7a1879f8f86c5a1">&#9670;&#160;</a></span>metadata</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dict src.doubles_env.DoublesGymEnv.metadata = {&quot;render_modes&quot;: []}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00130">130</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+</div>
+</div>
+<a id="a62202824cc16e75573c2f570c3b2b0e2" name="a62202824cc16e75573c2f570c3b2b0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62202824cc16e75573c2f570c3b2b0e2">&#9670;&#160;</a></span>observation_space</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.doubles_env.DoublesGymEnv.observation_space = self._inner.observation_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="doubles__env_8py_source.html#l00204">204</a> del archivo <a class="el" href="doubles__env_8py_source.html">doubles_env.py</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="rl__wrapper_8py_source.html#l00263">src.rl_wrapper.OpponentSamplingEnv._zeros()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>src/<a class="el" href="doubles__env_8py_source.html">doubles_env.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacesrc.html">src</a></li><li class="navelem"><a href="namespacesrc_1_1doubles__env.html">doubles_env</a></li><li class="navelem"><a href="classsrc_1_1doubles__env_1_1_doubles_gym_env.html">DoublesGymEnv</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

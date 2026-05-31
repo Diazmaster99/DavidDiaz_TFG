@@ -1,0 +1,55 @@
+
+@startuml
+skinparam componentStyle uml2
+skinparam backgroundColor White
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ComponentBackgroundColor<<own>>      #C8E6C9
+skinparam ComponentBorderColor<<own>>          #2E7D32
+skinparam ComponentBackgroundColor<<external>> #FFE0B2
+skinparam ComponentBorderColor<<external>>     #E65100
+skinparam ComponentBackgroundColor<<server>>   #FFCDD2
+skinparam ComponentBorderColor<<server>>       #C62828
+skinparam ComponentBackgroundColor<<rl>>       #BBDEFB
+skinparam ComponentBorderColor<<rl>>           #1565C0
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 14
+
+' --- Componente del servidor (externo, Node.js) ---
+component "Pokémon Showdown\n(Node.js, fork de vgc-bench)" as srv <<server>>
+
+' --- Componentes externos de Python ---
+package "Bibliotecas externas (Python)" {
+  component "poke-env\n(cliente WebSocket\n+ interfaz Gymnasium)" as pe <<external>>
+  component "Stable-Baselines3 +\nsb3-contrib (MaskablePPO)" as sb3 <<rl>>
+  component "PyTorch" as pt <<external>>
+}
+
+' --- Componentes propios del proyecto ---
+package "Código propio del proyecto" {
+  component "Parche poke-env\n(Behemoth Blade y Bash)" as patch <<own>>
+  component "Entornos del proyecto\nMySinglesEnv / MyDoublesEnv" as envs <<own>>
+  component "Envoltorio de un solo agente\n(OpponentSamplingEnv)" as wrap <<own>>
+  component "Envoltorios SB3\nSinglesGymEnv / DoublesGymEnv" as sbgym <<own>>
+  component "features.py\n(observación detallada)" as feats <<own>>
+  component "policy.py\n(MLP / extractor Transformer)" as pol <<own>>
+  component "WinRateCallback\n(callbacks.py)" as cb <<own>>
+  component "Scripts de entrada\n(train_singles, train_doubles,\nplay, battle_models,\nselfplay_from, plot_metrics)" as scripts <<own>>
+}
+
+' --- Relaciones de dependencia ---
+scripts ..> sbgym
+sbgym ..> wrap
+sbgym ..> sb3
+sbgym ..> pol
+wrap ..> envs
+envs ..> pe
+envs ..> feats
+pol ..> pt
+sb3 ..> pt
+patch ..> pe : <<parche>>
+scripts ..> sb3
+sb3 ..> cb
+pe ..> srv : WebSocket\n(localhost:8000)
+
+@enduml
