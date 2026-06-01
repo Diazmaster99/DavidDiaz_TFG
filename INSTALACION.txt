@@ -70,10 +70,11 @@ PyTorch se instala en su build de CPU por defecto. Para aprovechar GPU NVIDIA:
 
 
 ---------------------------------------------------------------------------
- PASO 3. SERVIDOR POKEMON SHOWDOWN (fork de vgc-bench) SOLO SI HAS CLONADO EL REPOSITORIO DE GITHUB
+ PASO 3. SERVIDOR POKEMON SHOWDOWN (fork de vgc-bench) 
 ---------------------------------------------------------------------------
 
-El servidor NO viene en la descarga. Se clona el FORK de vgc-bench DENTRO de la
+El servidor NO viene en la descarga del GitHub pero sí en la de fuentes del proyecto, si lo has descargado
+de ese anexo (Anexo C) no clones el servidor. Se clona el FORK de vgc-bench DENTRO de la
 carpeta del proyecto (arregla bugs del servidor estándar que cuelgan los combates
 largos de dobles):
 
