@@ -64,7 +64,7 @@ Opcional para acelerar el entrenamiento:
 
 ```bash
 # 1) Proyecto + entorno virtual + dependencias de Python
-git clone <URL_DEL_REPOSITORIO> DavidDiaz_TFG
+git clone https://github.com/Diazmaster99/DavidDiaz_TFG.git DavidDiaz_TFG
 cd DavidDiaz_TFG
 python -m venv .venv
 .venv\Scripts\activate

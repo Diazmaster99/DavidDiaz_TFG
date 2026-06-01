@@ -42,7 +42,7 @@ Abre una terminal nueva (PowerShell o CMD) y comprueba que responden:
  PASO 1. CLONAR EL PROYECTO (SOLO SI ESTÁS EN GITHUB) 
 ---------------------------------------------------------------------------
 
-    git clone <URL_DEL_REPOSITORIO> DavidDiaz_TFG
+    git clone https://github.com/Diazmaster99/DavidDiaz_TFG.git DavidDiaz_TFG
     cd DavidDiaz_TFG
 
 (O descomprime el ZIP del proyecto y entra en su carpeta.)
